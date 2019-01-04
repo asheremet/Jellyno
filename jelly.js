@@ -1102,7 +1102,8 @@
 
 		Stage.prototype.checkForCompletion = function () {
 			if (this.num_monochromatic_blocks <= this.num_colors) {
-				alert("Congratulations! Level completed.");
+				document.getElementById('completed').style.display = 'initial';
+				document.getElementById('next').style.display = 'initial';
 			}
 		};
 
@@ -1519,4 +1520,7 @@
 		return stage.history = history;
 	});
 
+	document.getElementById('next').addEventListener('click', function () {
+		location.search = '?' + (level + 1);
+	});
 }).call(this);

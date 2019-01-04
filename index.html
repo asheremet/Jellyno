@@ -37,6 +37,13 @@
       right: 75px;
       font: inherit;
     }
+    #next {
+      position: absolute;
+      bottom: 8px;
+      right: 143px;
+      font: inherit;
+      display: none;
+    }
     #stage table {
       border-spacing: 0;
       background: #ccc;
@@ -48,6 +55,15 @@
     }
     #stage table td {
       padding: 0;
+    }
+    #completed {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 190px;
+      color: royalblue;
+      font-weight: 900;
+      font-size: 20px;
     }
     .cell {
       width: 48px;
@@ -205,7 +221,9 @@
 
 <div id='stage'>
   <div id='map'></div>
+  <span id="completed">Congratulations! Level completed.</span>
   <select id='level'></select>
+  <button id='next'>Next</button>
   <button id='undo'>Undo</button>
   <button id='reset'>Reset</button>
 </div>
