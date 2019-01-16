@@ -1498,10 +1498,13 @@
 	levelPicker.value = level;
 
 	levelPicker.addEventListener('change', function () {
-		return location.search = '?' + levelPicker.value;
+		// return location.search = '?' + levelPicker.value;
+		stage.dom.innerHTML = '';
+		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
 	});
 
 	document.getElementById('reset').addEventListener('click', function () {
+		document.getElementById('completed').style.display = 'none';
 		stage.dom.innerHTML = '';
 		return stage = new Stage(stage.dom, levels[level - 1]);
 	});
