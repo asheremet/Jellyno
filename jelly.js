@@ -779,7 +779,7 @@
 					color: 'red'
 				}
 			]
-			]
+			],
 	];
 
 	CELL_SIZE = 48;
@@ -1587,7 +1587,7 @@
 	document.getElementById('reset').addEventListener('click', function () {
 		document.getElementById('completed').style.display = 'none';
 		stage.dom.innerHTML = '';
-		return stage = new Stage(stage.dom, levels[level - 1]);
+		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
 	});
 
 	document.getElementById('undo').addEventListener('click', function () {
@@ -1605,6 +1605,13 @@
 	});
 
 	document.getElementById('next').addEventListener('click', function () {
-		location.search = '?' + (level + 1);
+		document.getElementById('completed').style.display = 'none';
+		stage.dom.innerHTML = '';
+		this.style.display = 'none';
+		if (levels.length == levelPicker.value)
+			levelPicker.value = 1;
+		else
+			levelPicker.value++;
+		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
 	});
 }).call(this);
