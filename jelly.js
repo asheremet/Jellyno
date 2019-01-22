@@ -741,9 +741,9 @@
 		/*41*/[
 			[
 				"xxxxxxxxxxxxxx",
-				"x0r    r0  g x",
+				"x0r    r1  g x",
 				"x x    x   x x",
-				"xr0    0r    x",
+				"xr2    3r    x",
 				"x x    x     x",
 				"xg           x",
 				"xxxx         x",
@@ -779,7 +779,263 @@
 					color: 'red'
 				}
 			]
-			],
+		],
+		/*42*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xx000x   b g x",
+				"xx000    1r2 x",
+				"xxxr     g b x",
+				"xr      33r44x",
+				"xxx         xx",
+				"xx        xxxx",
+				"xx        xxxx",
+				"xx      x xxxx",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 3,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 10,
+					y: 2,
+					dir: 'right'
+				},
+				{
+					x: 10,
+					y: 2,
+					dir: 'left'
+				},
+				{
+					x: 10,
+					y: 4,
+					dir: 'right'
+				},
+				{
+					x: 10,
+					y: 4,
+					dir: 'left'
+				},
+				{
+					x: 11,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 9,
+					y: 3,
+					dir: 'up'
+				}
+			]],
+		/*43*/[
+			[
+				"xxxxxxxxxxxx",
+				"xxxxxxg g gx",
+				"xxxxxx     x",
+				"xxxxxx     x",
+				"xxxxxx     x",
+				"xg1g2g     x",
+				"xxxxxx     x",
+				"xxxxxx00000x",
+				"xxxxxx    rx",
+				"xxxxxxxxxxxx"
+			], [
+				{
+					x: 6,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 10,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 6,
+					y: 8,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 6,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 7,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 8,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 9,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				}
+			]
+		],
+		/*44*/[
+			[
+				"xxxxxxxxxxxx",
+				"xxxxxxg g gx",
+				"xxxxxx     x",
+				"xxxxxx     x",
+				"xxxxxx     x",
+				"x1g2g3     x",
+				"xxxxxx     x",
+				"xxxxxx00000x",
+				"xxxxxx    rx",
+				"xxxxxxxxxxxx"
+			], [
+				{
+					x: 6,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 10,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 6,
+					y: 8,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 6,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 7,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 8,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 9,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				}
+			]
+		],
+		/*45*/[
+			[
+				"xxxxxxxxxxxx",
+				"xyy      ggx",
+				"x 0b    b1 x",
+				"xgr      ryx",
+				"xxx      xxx",
+				"xxxx    xxxx",
+				"x r     r  x",
+				"x 2     3  x",
+				"x 2     3  x",
+				"xxxxxxxxxxxx"
+			], [
+				{
+					x: 3,
+					y: 2,
+					dir: 'left'
+				},
+				{
+					x: 1,
+					y: 3,
+					dir: 'down'
+				},
+				{
+					x: 2,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 2,
+					dir: 'right'
+				},
+				{
+					x: 9,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 10,
+					y: 3,
+					dir: 'down'
+				},
+				{
+					x: 2,
+					y: 6,
+					dir: 'down'
+				},
+				{
+					x: 8,
+					y: 6,
+					dir: 'down'
+				}
+			]
+		],
+		/*46*/[
+			[
+				"xxxxxxxxxxxxx",
+				"xxxxxxxxxxxyx",
+				"xyyrr       x",
+				"xyyrr      gx",
+				"xbb0      xxx",
+				"xbb0      xxx",
+				"xggxx     xxx",
+				"xggxx     xxx",
+				"xxxxxxrxxxxxx",
+				"xxxxxxxxxxxxx"
+			], [
+				{
+					x: 11,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 7,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 8,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				},
+			]
+		]
 	];
 
 	CELL_SIZE = 48;
