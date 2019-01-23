@@ -1112,6 +1112,44 @@
 					color: 'red'
 				}
 			]
+		],
+		/*49*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xg           x",
+				"x     r   r  x",
+				"xg    xxxxx  x",
+				"x00   xxxxx  x",
+				"x00          x",
+				"x00        rrx",
+				"xxxxx      b x",
+				"xxxxxxxxxxxxxx"
+			],[
+				{
+					x: 1,
+					y: 1,
+					dir: 'up'
+				}
+			],[
+				{
+					x: 5,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				},
+				{
+					x: 7,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				},
+				{
+					x: 9,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				}
+			]
 		]
 	];
 
