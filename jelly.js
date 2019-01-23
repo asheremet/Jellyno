@@ -1092,7 +1092,13 @@
 				"xxxx       rx",
 				"x         xxx",
 				"xxxxxxxxxxxxx"
-			],[],[
+			],[
+				{
+					x: 3,
+					y: 5,
+					dir: 'up'
+				}
+			],[
 				{
 					x: 0,
 					y: 7,
@@ -1802,7 +1808,6 @@
 				'up': ['borderTop', 'borderBottom'],
 				'down': ['borderBottom', 'borderTop']
 			};
-			console.log(this.color)
 			this.dom.style[borders[dir][0]] = this.color.indexOf('black')==0?'none':'dotted 1px #c3c3c3';
 			other.dom.style[borders[dir][1]] = 'none';
 			if (other instanceof Wall) {
