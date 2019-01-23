@@ -1035,6 +1035,77 @@
 					color: 'blue'
 				},
 			]
+		],
+		/*47*/[
+			[
+				"xxxxxxxxxxxxx",
+				"xxx   y   0xx",
+				"xxx   x   bbx",
+				"x         bbx",
+				"x         xxx",
+				"x  x      xxx",
+				"x  x      xxx",
+				"x  x      xxx",
+				"xbbx      xxx",
+				"xxxxxxxxxxxxx",
+			],[],[
+				{
+					x: 5,
+					y: 9,
+					dir: 'up',
+					color: 'yellow'
+				},
+				{
+					x: 6,
+					y: 9,
+					dir: 'up',
+					color: 'yellow'
+				},
+				{
+					x: 7,
+					y: 9,
+					dir: 'up',
+					color: 'yellow'
+				},
+				{
+					x: 8,
+					y: 9,
+					dir: 'up',
+					color: 'yellow'
+				},
+				{
+					x: 9,
+					y: 9,
+					dir: 'up',
+					color: 'yellow'
+				}
+			]
+		],
+		/*48*/[
+			[
+				"xxxxxxxxxxxxx",
+				"xxxxxg    ggx",
+				"xxxxxx    xxx",
+				"xxxxxg    ggx",
+				"xxxxxx    xxx",
+				"xxxg      xxx",
+				"xxxx       rx",
+				"x         xxx",
+				"xxxxxxxxxxxxx"
+			],[],[
+				{
+					x: 0,
+					y: 7,
+					dir: 'right',
+					color: 'red'
+				},
+				{
+					x: 5,
+					y: 8,
+					dir: 'up',
+					color: 'red'
+				}
+			]
 		]
 	];
 
@@ -1700,6 +1771,17 @@
 	})();
 
 	JellyCell = (function () {
+		function drawFace(domEl){
+			function add(name, text) {
+				var el = document.createElement('span');
+				el.className = name;
+				domEl.appendChild(el);
+			}
+			add('left-eye','.');
+			add('right-eye','.');
+			add('mouth','_');
+		}
+
 		function JellyCell(color) {
 			this.color = color;
 			this.dom = document.createElement('div');
@@ -1708,6 +1790,8 @@
 			this.y = 0;
 			this.color_master = this;
 			this.color_mates = [this];
+
+			drawFace(this.dom);
 		}
 
 		JellyCell.prototype.mergeWith = function (other, dir) {
@@ -1718,7 +1802,8 @@
 				'up': ['borderTop', 'borderBottom'],
 				'down': ['borderBottom', 'borderTop']
 			};
-			this.dom.style[borders[dir][0]] = 'none';
+			console.log(this.color)
+			this.dom.style[borders[dir][0]] = this.color.indexOf('black')==0?'none':'dotted 1px #c3c3c3';
 			other.dom.style[borders[dir][1]] = 'none';
 			if (other instanceof Wall) {
 				this.jelly.immovable = true;

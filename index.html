@@ -72,6 +72,7 @@
       height: 48px;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
+      text-align: center;
     }
     .transparent {
       background: #eef7ff;
@@ -190,23 +191,96 @@
     .red {
       background: hsl(0, 100%, 75%);
       border: solid 1px hsl(0, 100%, 30%);
+      line-height: 10px;
     }
     .blue {
       background: hsl(216, 100%, 70%);
       border: solid 1px hsl(216, 100%, 30%);
+      line-height: 0px;
     }
     .green {
       background: hsl(120, 100%, 45%);
       border: solid 1px hsl(120, 100%, 30%);
+      line-height: 11px;
     }
     .yellow {
       background: hsl(60, 100%, 50%);
       border: solid 1px hsl(60, 100%, 30%);
+      line-height: 15px;
     }
     .black0, .black1, .black2, .black3, .black4, .black5, .black6, .black7,
     .black8, .black9 {
       background: hsl(0, 0%, 20%);
       border: solid 1px hsl(0, 0%, 50%);
+    }
+    .left-eye, .right-eye, .mouth{
+      font-size: 25px;
+      color: #f5f5f5
+    }
+    .left-eye, .right-eye{
+      display: inline-block;
+      margin: 4px;
+    }
+    .mouth{
+      display: block;
+    }
+    .blue .left-eye::before, .blue .right-eye::before{
+      content: '-';
+    }
+    .blue .left-eye, .blue .right-eye{
+      padding-top: 8px;
+    }
+    .blue .mouth{
+      font-size: 30px;
+    }
+    .blue .mouth::before {
+      content: "_";
+    }
+    .red .left-eye, .red .right-eye{
+      margin-top: 9px;
+      margin-bottom:5px;
+    }
+    .red .left-eye::before, .red .right-eye::before{
+      content: '\2022';
+    }
+    .red .mouth{
+      transform: rotate(270deg);
+      margin-left: -6px;
+    }
+    .red .mouth::before {
+      content: ")";
+    }
+    .green .left-eye, .green .right-eye{
+      margin: 9px 3px 5px;
+      font-size: 9px;
+      color: #f3f3f3;
+    }
+    .green .left-eye::before, .green .right-eye::before{
+      content: '\2605';
+    }
+    .green .mouth{
+      transform: rotate(90deg);
+      margin-left: 5px;
+      color: #f3f3f3;
+    }
+    .green .mouth::before {
+      content: ")";
+    }
+    .yellow .left-eye, .yellow .right-eye{
+      margin: 9px 3px 0px;
+      font-size: 9px;
+      color: #d3d3d3;
+    }
+    .yellow .left-eye::before, .yellow .right-eye::before{
+      content: '\2666';
+    }
+    .yellow .mouth{
+      transform: rotate(60deg);
+      margin-left: 5px;
+      color: #d3d3d3;
+    }
+    .yellow .mouth::before {
+      content: "/";
     }
   </style>
 </head>
@@ -238,7 +312,7 @@
 
 <p><a href='https://github.com/asheremet/Jellyno'>Here's the source</a>.
 
-  <script src='jelly.js?v4'></script>
+  <script src='jelly.js?v5'></script>
 
 </body>
 </html>
