@@ -1150,6 +1150,114 @@
 					color: 'blue'
 				}
 			]
+		],
+		/*50*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'x            x',
+				'x    g       x',
+				'xgy  g       x',
+				'xxx  y       x',
+				'xxxx x       x',
+				'xxx         yx',
+				'xxx      x xxx',
+				'xxxxxxxxxxxxxx'
+			],[
+				{
+					x: 12,
+					y: 6,
+					dir: 'down'
+				}
+			]
+		],
+		/*51*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'x  r 0   xxxxx',
+				'x  x x       x',
+				'x       11   x',
+				'xxxx     xx  x',
+				'x      x    rx',
+				'x  x x   x   x',
+				'x           xx',
+				'xxxxxxx x  xxx',
+				'xxxxxxxxxxxxxx'
+			], [
+				{
+					x: 12,
+					y: 5,
+					dir: 'right'
+				}
+			]
+		],
+		/*52*/[
+			[
+				'xxxxxxxxxxxxx',
+				'x           x',
+				'x     y     x',
+				'x     x     x',
+				'x000       1x',
+				'x r       rxx',
+				'x g      yxxx',
+				'xxxx   x  gxx',
+				'xxxxxxxxx xxx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 10,
+					y: 5,
+					dir: 'down'
+				},
+				{
+					x: 9,
+					y: 6,
+					dir: 'right'
+				},
+				{
+					x: 10,
+					y: 7,
+					dir: 'up'
+				}
+			]
+		],
+		/*53*/[
+			[
+				'xxxxxxxxxxxxx',
+				'xy      rxxxx',
+				'xy 00  yrxxxx',
+				'xr 00  xxxxxx',
+				'xx xx      xx',
+				'xx         xx',
+				'xx       x rx',
+				'xxxxxx xxxxxx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 11,
+					y: 6,
+					dir: 'up'
+				}
+			]
+		],
+		/*54*/[
+			[
+				'xxxxxxxxxxxxx',
+				'xx  r y y   x',
+				'x00 x x x  rx',
+				'x00        xx',
+				'x11        xx',
+				'x11        xx',
+				'xx         xx',
+				'xxxx       xx',
+				'xxxxxx     xx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 11,
+					y: 2,
+					dir: 'down'
+				}
+			]
 		]
 	];
 
@@ -1963,15 +2071,11 @@
 	levelPicker.value = level;
 
 	levelPicker.addEventListener('change', function () {
-		// return location.search = '?' + levelPicker.value;
-		stage.dom.innerHTML = '';
-		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
+		return reset();
 	});
 
 	document.getElementById('reset').addEventListener('click', function () {
-		document.getElementById('completed').style.display = 'none';
-		stage.dom.innerHTML = '';
-		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
+		return reset();
 	});
 
 	document.getElementById('undo').addEventListener('click', function () {
@@ -1989,13 +2093,16 @@
 	});
 
 	document.getElementById('next').addEventListener('click', function () {
-		document.getElementById('completed').style.display = 'none';
-		stage.dom.innerHTML = '';
-		this.style.display = 'none';
 		if (levels.length == levelPicker.value)
 			levelPicker.value = 1;
 		else
 			levelPicker.value++;
-		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
+		return reset();
 	});
+	function reset() {
+		document.getElementById('completed').style.display = 'none';
+		document.getElementById('next').style.display = 'none';
+		stage.dom.innerHTML = '';
+		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
+	}
 }).call(this);
