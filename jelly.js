@@ -1296,7 +1296,15 @@
 	};
 
 	Stage = (function () {
-		function Stage(dom, map) {
+		function Stage(dom, levelOrMap) {
+			var map;
+			if(typeof levelOrMap == "number"){
+				var map = levels[levelOrMap];
+				localStorage.setItem('lastlevel', levelOrMap+1);
+			}
+			else
+				map = levelOrMap;
+
 			var anchors, event, growers, maybeSwallowEvent, _i, _len, _ref,
 				_this = this;
 			this.dom = dom;
@@ -2053,9 +2061,9 @@
 
 	})();
 
-	level = parseInt(location.search.substr(1), 10) || 1;
+	level = localStorage.getItem('lastlevel') || parseInt(location.search.substr(1), 10) || 1;
 
-	stage = new Stage(document.getElementById('map'), levels[level - 1]);
+	stage = new Stage(document.getElementById('map'), level - 1);
 
 	window.stage = stage;
 
@@ -2103,6 +2111,6 @@
 		document.getElementById('completed').style.display = 'none';
 		document.getElementById('next').style.display = 'none';
 		stage.dom.innerHTML = '';
-		return stage = new Stage(stage.dom, levels[levelPicker.value - 1]);
+		return stage = new Stage(stage.dom, levelPicker.value - 1);
 	}
 }).call(this);
