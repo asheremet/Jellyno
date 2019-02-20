@@ -2072,7 +2072,7 @@
 	})();
 
 	var currentLevel = document.querySelector('#currentLevel>span');
-	setCurrentLevel(parseInt(localStorage.getItem('lastlevel') || location.search.substr(1)-1, 10) || 0);
+	setCurrentLevel(parseInt(localStorage.getItem('lastlevel'), 10) || 0);
 
 	stage = new Stage(document.getElementById('map'), level);
 
