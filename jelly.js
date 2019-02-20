@@ -1,5 +1,5 @@
 (function() {
-	var CELL_SIZE, Jelly, JellyCell, Stage, Wall, directions, i, level, levelPicker, levels, moveToCell, option, stage,
+	var CELL_SIZE, Jelly, JellyCell, Stage, Wall, directions, i, level, levels, moveToCell, option, stage,
 		style_colors, _i, _ref,
 		__indexOf = [].indexOf || function (item) {
 			for (var i = 0, l = this.length; i < l; i++) {
@@ -1299,8 +1299,9 @@
 		function Stage(dom, levelOrMap) {
 			var map;
 			if(typeof levelOrMap == "number"){
+				level = levelOrMap;
 				var map = levels[levelOrMap];
-				localStorage.setItem('lastlevel', levelOrMap+1);
+				localStorage.setItem('lastlevel', levelOrMap);
 			}
 			else
 				map = levelOrMap;
@@ -1670,8 +1671,17 @@
 
 		Stage.prototype.checkForCompletion = function () {
 			if (this.num_monochromatic_blocks <= this.num_colors) {
-				document.getElementById('completed').style.display = 'initial';
+				const right = (getComputedStyle(document.getElementById('stage')).width.replace('px','') - 317/*message width*/)/2;
+				const message = document.getElementById('completed');
+				message.style.right = `${right}px`;
+				message.style.display = 'initial';
 				document.getElementById('next').style.display = 'initial';
+				var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+				var skippedIndex = skippedLevels.indexOf(level)
+				if(skippedIndex > -1){
+					skippedLevels.splice(skippedIndex, 1);
+					localStorage.setItem('skippedLevels', JSON.stringify(skippedLevels.sort()));
+				}
 			}
 		};
 
@@ -2061,26 +2071,29 @@
 
 	})();
 
-	level = localStorage.getItem('lastlevel') || parseInt(location.search.substr(1), 10) || 1;
+	var currentLevel = document.querySelector('#currentLevel>span');
+	setCurrentLevel(parseInt(localStorage.getItem('lastlevel') || location.search.substr(1)-1, 10) || 0);
 
-	stage = new Stage(document.getElementById('map'), level - 1);
+	stage = new Stage(document.getElementById('map'), level);
 
 	window.stage = stage;
 
-	levelPicker = document.getElementById('level');
-
-	for (i = _i = 1, _ref = levels.length; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-		option = document.createElement('option');
-		option.value = i;
-		option.appendChild(document.createTextNode("Level " + i));
-		levelPicker.appendChild(option);
+	function addLevelLI(val) {
+		const li = document.createElement('li');
+		li.setAttribute('data', val);
+		li.innerHTML = `Level ${val}`;
+		li.addEventListener('click', () => {
+			setCurrentLevel(val-1);
+			reset();
+		});
+		const ul = document.getElementById('levels');
+		ul.appendChild(li);
 	}
 
-	levelPicker.value = level;
-
-	levelPicker.addEventListener('change', function () {
-		return reset();
-	});
+	function setCurrentLevel(lvl) {
+		level = lvl;
+		currentLevel.innerHTML = level + 1;
+	}
 
 	document.getElementById('reset').addEventListener('click', function () {
 		return reset();
@@ -2100,17 +2113,93 @@
 		return stage.history = history;
 	});
 
-	document.getElementById('next').addEventListener('click', function () {
-		if (levels.length == levelPicker.value)
-			levelPicker.value = 1;
-		else
-			levelPicker.value++;
-		return reset();
+	document.getElementById('next').addEventListener('click', next);
+
+	document.getElementById('allLevels').addEventListener('click', function (ev) {
+		ev.stopPropagation();
+		const levelsMenu = document.getElementById('levels');
+		levelsMenu.innerHTML = '';
+		for (i = _i = 1, _ref = levels.length; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i){
+			addLevelLI(i);
+		}
+		document.querySelector('ul.menu').style.display = 'block';
+		levelsMenu.style.top = '56px';
+		levelsMenu.style.display = 'block';
 	});
+	document.getElementById('skippedLevels').addEventListener('click', function (ev) {
+		if (!this.classList.contains('disabled')) {
+			ev.stopPropagation();
+			const levelsMenu = document.getElementById('levels');
+			levelsMenu.innerHTML = '';
+			var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+			for (let i = 0; i < skippedLevels.length; i++)
+				addLevelLI(skippedLevels[i]+1);
+			document.querySelector('ul.menu').style.display = 'block';
+			levelsMenu.style.top = '84px';
+			levelsMenu.style.display = 'block';
+		}
+	});
+	document.querySelector("li.skip").addEventListener('click', function (evt) {
+		var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+		if (!skippedLevels.find((l) => level == l))
+		skippedLevels.push(level);
+
+		localStorage.setItem('skippedLevels', JSON.stringify(skippedLevels.sort((a, b) => {
+			if (a > b) return 1;
+			if (b > a) return -1;
+			return 0;
+		})));
+		next();
+	});
+
+	document.querySelector("li.clearskipped").addEventListener('click', function (evt) {
+		if (!this.classList.contains('disabled')) {
+			localStorage.removeItem('skippedLevels')
+		}
+	});
+
 	function reset() {
 		document.getElementById('completed').style.display = 'none';
 		document.getElementById('next').style.display = 'none';
 		stage.dom.innerHTML = '';
-		return stage = new Stage(stage.dom, levelPicker.value - 1);
+		return stage = new Stage(stage.dom, level);
+	}
+
+	function next() {
+		if (levels.length == level)
+			level = 1;
+		else
+			level++;
+		return reset();
 	}
 }).call(this);
+
+function showMenu(e) {
+	var menu = document.querySelector('ul.menu');
+	var submenu = document.querySelector('#levels');
+	var display = menu.style.display;
+	e.stopPropagation();
+	if(display === 'block'){
+		hide();
+	}
+	else {
+		show();
+		document.addEventListener('click', hide, {once: true})
+	}
+	function hide() {
+		menu.style.display = 'none';
+		submenu.style.display = 'none';
+	}
+	function show() {
+		var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+		if(skippedLevels.length){
+			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.remove('disabled')});
+		}
+		else{
+			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.add('disabled')});
+		}
+
+		menu.style.display = 'block';
+
+	}
+}

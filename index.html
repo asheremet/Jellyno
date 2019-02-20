@@ -19,11 +19,55 @@
       display: inline-block;
       border: solid 1px #777;
     }
-    select#level {
+    .disabled { color: #a9a9a9;}
+    #currentLevel{
       position: absolute;
-      top: 8px;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+    }
+    img.menu {
+      width: 24px;
+      position: absolute;
+      top: 7px;
       right: 8px;
-      font: inherit;
+      background: #c5c5c5;
+      border-radius: 5px;
+      border: #828080 1px solid;
+      padding: 1px 3px;
+    }
+    ul {
+      position: absolute;
+      top: -8px;
+      right: 40px;
+      background: lightgrey;
+      border: grey 1px solid;
+      border-radius: 5px;
+      padding-inline-start: 0;
+      display: none;
+    }
+    ul li {
+      list-style-type: none;
+      padding: 3px 10px;
+    }
+    ul li:last-child {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    ul li:first-child {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    ul li:active, ul li:hover {
+      background-color: #b2b2b2;
+    }
+    ul ul#levels{
+      max-height: 305px;
+      width: 110px;
+      position: absolute;
+      right: 160px;
+      overflow-y: auto;
     }
     button {height: 45px; width: 58px;}
     #reset {
@@ -35,13 +79,13 @@
     #undo {
       position: absolute;
       bottom: 8px;
-      right: 85px;
+      left: 8px;
       font: inherit;
     }
     #next {
       position: absolute;
       bottom: 8px;
-      right: 163px;
+      right: 85px;
       font: inherit;
       display: none;
     }
@@ -61,7 +105,6 @@
       display: none;
       position: absolute;
       top: 10px;
-      left: 190px;
       color: royalblue;
       font-weight: 900;
       font-size: 20px;
@@ -298,8 +341,16 @@
 
 <div id='stage'>
   <div id='map'></div>
+  <span id="currentLevel">Level <span></span></span>
   <span id="completed">Congratulations! Level completed.</span>
-  <select id='level'></select>
+  <img class="menu" src="menu.png" onclick="showMenu(event)"/>
+  <ul class="menu">
+    <li class="skip">Skip current level</li>
+    <li class="clearskipped">Clear skipped levels</li>
+    <li id="allLevels">All levels</li>
+    <li id="skippedLevels">Skipped levels</li>
+    <ul id="levels"></ul>
+  </ul>
   <button id='next'>Next</button>
   <button id='undo'>Undo</button>
   <button id='reset'>Reset</button>
@@ -313,7 +364,7 @@
 
 <p><a href='https://github.com/asheremet/Jellyno'>Here's the source</a>.
 
-  <script src='jelly.js?v9'></script>
+  <script src='jelly.js?v10'></script>
 
 </body>
 </html>
