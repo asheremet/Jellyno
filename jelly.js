@@ -2166,10 +2166,7 @@
 	}
 
 	function next() {
-		if (levels.length == level)
-			level = 1;
-		else
-			level++;
+		setCurrentLevel(levels.length == level ? 1 : level + 1)
 		return reset();
 	}
 }).call(this);
