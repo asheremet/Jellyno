@@ -2153,8 +2153,8 @@
 	});
 
 	document.querySelector("li.clearskipped").addEventListener('click', function (evt) {
-		if (!this.classList.contains('disabled')) {
-			localStorage.removeItem('skippedLevels')
+		if (!this.classList.contains('disabled') && confirm('Are you sure you want to forget skipped levels?')) {
+			localStorage.removeItem('skippedLevels');
 		}
 	});
 
@@ -2166,7 +2166,7 @@
 	}
 
 	function next() {
-		setCurrentLevel(levels.length == level ? 1 : level + 1)
+		setCurrentLevel(levels.length == (level + 1) ? 0 : level + 1)
 		return reset();
 	}
 }).call(this);
