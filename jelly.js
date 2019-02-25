@@ -1299,6 +1299,8 @@
 		function Stage(dom, levelOrMap) {
 			var map;
 			if(typeof levelOrMap == "number"){
+				if(levelOrMap == levels.length)
+					levelOrMap = 0;
 				level = levelOrMap;
 				var map = levels[levelOrMap];
 				localStorage.setItem('lastlevel', levelOrMap);
