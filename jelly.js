@@ -895,7 +895,6 @@
 				"xxxxxxg g gx",
 				"xxxxxx     x",
 				"xxxxxx     x",
-				"xxxxxx     x",
 				"x1g2g3     x",
 				"xxxxxx     x",
 				"xxxxxx00000x",
@@ -919,36 +918,36 @@
 				},
 				{
 					x: 6,
-					y: 8,
+					y: 7,
 					dir: 'down'
 				}
 			], [
 				{
 					x: 6,
-					y: 9,
+					y: 8,
 					dir: 'up',
 					color: 'red'
 				},
 				{
 					x: 7,
-					y: 9,
+					y: 8,
 					dir: 'up',
 					color: 'red'
 				},
 				{
 					x: 8,
-					y: 9,
+					y: 8,
 					dir: 'up',
 					color: 'red'
 				},
 				{
 					x: 9,
-					y: 9,
+					y: 8,
 					dir: 'up',
 					color: 'red'
 				}
 			]
-		],
+		],//level 53 https://youtu.be/EM0XSLXwZlA?t=227
 		/*45*/[
 			[
 				"xxxxxxxxxxxx",
@@ -1259,6 +1258,7 @@
 				}
 			]
 		]
+		//61-70:https://www.youtube.com/watch?v=zf5ciAmfoTk
 	];
 
 	CELL_SIZE = 48;
