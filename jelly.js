@@ -1257,8 +1257,290 @@
 					dir: 'down'
 				}
 			]
-		]
-		//61-70:https://www.youtube.com/watch?v=zf5ciAmfoTk
+		],
+		/*55*/[
+			[
+				'xxxxxxxxxxx',
+				'x rgb    xx',
+				'x gbr    xx',
+				'x 000    yx',
+				'x 000    xx',
+				'x11111   xx',
+				'x 111    xx',
+				'x 1 1    xx',
+				'x 1 1    xx',
+				'xxxxxxxxxxx'
+			], [
+				{
+					x: 9,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 6,
+					y: 5,
+					dir: 'left'
+				}
+			], [
+				{
+					x: 5,
+					y: 5,
+					color: 'yellow',
+					dir: 'right'
+				},
+				{
+					x: 6,
+					y: 9,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 7,
+					y: 9,
+					dir: 'up',
+					color: 'blue'
+				}
+			]
+		],//level 61 https://www.youtube.com/watch?v=zf5ciAmfoTk
+		/*56*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xy      00rxxx',
+				'x1      0rbyxx',
+				'xxbx    r xxxx',
+				'x         xxxx',
+				'x  r        rx',
+				'x r2        xx',
+				'xr22        xx',
+				'xxxxxxxx xxxxx',
+				'xxxxxxxxxxxxxx'
+			], [
+				{
+					x: 2,
+					y: 3,
+					dir: 'left'
+				},
+				{
+					x: 10,
+					y: 1,
+					dir: 'left'
+				},
+				{
+					x: 9,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 9,
+					y: 2,
+					dir: 'left'
+				},
+				{
+					x: 8,
+					y: 3,
+					dir: 'up'
+				},
+				{
+					x: 11,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 3,
+					y: 5,
+					dir: 'down'
+				},
+				{
+					x: 2,
+					y: 6,
+					dir: 'down'
+				},
+				{
+					x: 2,
+					y: 6,
+					dir: 'right'
+				},
+				{
+					x: 1,
+					y: 7,
+					dir: 'right'
+				},
+				{
+					x: 12,
+					y: 5,
+					dir: 'up'
+				}
+			]
+		], //level 62 https://youtu.be/zf5ciAmfoTk?t=28
+		/*57*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xrr  rb   xxxx',
+				'xgg  gg   bbbx',
+				'xxx  xxxx   xx',
+				'x       x    x',
+				'x            x',
+				'x            x',
+				'x            x',
+				'xxrxxxxxxrxxxx',
+				'xxxxxxxxxxxxxx'
+			],[
+				{
+					x: 9,
+					y: 8,
+					dir: 'down'
+				}
+			],[
+				{
+					x: 5,
+					y: 8,
+					color: 'blue',
+					dir: 'up'
+				}
+			]
+		], //level 63 https://youtu.be/zf5ciAmfoTk?t=59
+		/*58*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xrr  rb   xxxx',
+				'xyy  yy    bbx',
+				'xxx  xxxx   xx',
+				'x       x    x',
+				'x            x',
+				'x            x',
+				'x            x',
+				'xxrxxxxxxrxxxx',
+				'xxxxxxxxxxxxxx'
+			],[
+				{
+					x: 9,
+					y: 8,
+					dir: 'down'
+				}
+			],[
+				{
+					x: 5,
+					y: 8,
+					color: 'blue',
+					dir: 'up'
+				}
+			]
+		], //level 64 https://youtu.be/zf5ciAmfoTk?t=87
+		/*59*/[
+			[
+				'xxxxxxxxxxxxx',
+				'x0yyyyy  br x',
+				'x0y     rryxx',
+				'x0y      xxxx',
+				'x0y       xxx',
+				'x0y       xxx',
+				'xx        xxx',
+				'xx  x  xx bxx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 2,
+					y: 1,
+					dir: 'left'
+				},
+				{
+					x: 2,
+					y: 2,
+					dir: 'left'
+				},
+				{
+					x: 2,
+					y: 3,
+					dir: 'left'
+				},
+				{
+					x: 2,
+					y: 4,
+					dir: 'left'
+				},
+				{
+					x: 2,
+					y: 5,
+					dir: 'left'
+				},
+				{
+					x: 10,
+					y: 7,
+					dir: 'up'
+				}
+			], [
+				{
+					x: 2,
+					y: 8,
+					dir: 'up',
+					color: 'red'
+				},
+				{
+					x: 12,
+					y: 1,
+					dir: 'left',
+					color: 'yellow'
+				}
+			]
+		], //level 65 https://youtu.be/zf5ciAmfoTk?t=114
+		/*60*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xxxxxx       x',
+				'xgggxxr0y    x',
+				'x   xxyrrr   x',
+				'xgggxxxxxx   x',
+				'x111xx       x',
+				'xx1xx        x',
+				'xx        xxxx',
+				'x        xxxxx',
+				'xxxxx    xxxxx',
+				'xxxxxxxxxxxxxx'
+			], [
+				{
+					x: 1,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 2,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 3,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 1,
+					y: 4,
+					dir: 'down'
+				},
+				{
+					x: 2,
+					y: 4,
+					dir: 'down'
+				},
+				{
+					x: 3,
+					y: 4,
+					dir: 'down'
+				},
+				{
+					x: 7,
+					y: 1,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 7,
+					y: 2,
+					dir: 'up',
+					color: 'red'
+				}
+			]
+		], //level 66 https://youtu.be/zf5ciAmfoTk?t=139
 	];
 
 	CELL_SIZE = 48;
