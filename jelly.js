@@ -263,7 +263,7 @@
 					color: 'red'
 				}
 			]
-		],
+		], // https://youtu.be/zf5ciAmfoTk?t=188
 		/*25*/[
 			["xxxxxxxxxxxxxx", "xxxxxxxx  x  x", "xxxxxxxx  r  x", "xxxxxxxx     x", "xxxxx     r  x", "xx111    222 x", "x 111    222 x", "x g        x x", "xxxxxxxxxxxxxx", "xxxxxxxxxxxxxx"], [
 				{
@@ -1265,7 +1265,7 @@
 				'x gbr    xx',
 				'x 000    yx',
 				'x 000    xx',
-				'x11111   xx',
+				'x1111y   xx',
 				'x 111    xx',
 				'x 1 1    xx',
 				'x 1 1    xx',
@@ -1277,17 +1277,17 @@
 					dir: 'up'
 				},
 				{
-					x: 6,
+					x: 5,
 					y: 5,
 					dir: 'left'
 				}
 			], [
-				{
+				/*{
 					x: 5,
 					y: 5,
 					color: 'yellow',
 					dir: 'right'
-				},
+				},*/
 				{
 					x: 6,
 					y: 9,
@@ -1541,6 +1541,80 @@
 				}
 			]
 		], //level 66 https://youtu.be/zf5ciAmfoTk?t=139
+		/*61*/[
+			[
+				'xxxxxxxxxxxx',
+				'xxxbx  xgxxx',
+				'xxxgb  gbxxx',
+				'x xxx  xxx x',
+				'x   b  g   x',
+				'xg        bx',
+				'xxb      gxx',
+				'xxx      xxx',
+				'xxxxxxxxxxxx'
+			], [
+				{
+					x: 7,
+					y: 4,
+					dir: 'up'
+				},
+				{
+					x: 4,
+					y: 4,
+					dir: 'up'
+				},
+				{
+					x: 2,
+					y: 6,
+					dir: 'down'
+				},
+				{
+					x: 9,
+					y: 6,
+					dir: 'down'
+				}
+			]
+		], // https://youtu.be/zf5ciAmfoTk?t=168
+		/*62*/[
+			[
+				'xxxxxxxxxxxxx',
+				'xyyy0000000xx',
+				'xyyy0000000xx',
+				'xxxx  b    xx',
+				'xxxx  g    xx',
+				'xxxx  r    xx',
+				'xx    b    yx',
+				'x     g  g xx',
+				'x     r  r xx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 11,
+					y: 6,
+					dir: 'up'
+				}
+			]
+		],
+		/*63*/[
+			[
+				'xxxxxxxxxxxxx',
+				'xggg0000000xx',
+				'xggg0000000xx',
+				'xxxx  b    xx',
+				'xxxx  y    xx',
+				'xxxx  r    xx',
+				'x     b  b gx',
+				'x     y  y xx',
+				'x     r  r xx',
+				'xxxxxxxxxxxxx'
+			], [
+				{
+					x: 11,
+					y: 6,
+					dir: 'up'
+				}
+			]
+		], //level 70 https://youtu.be/zf5ciAmfoTk?t=230
 	];
 
 	CELL_SIZE = 48;
