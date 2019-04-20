@@ -8,7 +8,7 @@
 			return -1;
 		};
 
-	levels = getLevels();
+	levels = Levels.getAll();
 
 	CELL_SIZE = 48;
 
@@ -843,7 +843,9 @@
 
 	function setCurrentLevel(lvl) {
 		level = lvl;
+		Levels.current = level;
 		currentLevel.innerHTML = level + 1;
+		showInstructions();
 	}
 
 	document.getElementById('reset').addEventListener('click', function () {
@@ -920,6 +922,27 @@
 		setCurrentLevel(levels.length == (level + 1) ? 0 : level + 1)
 		return reset();
 	}
+	function showInstructions(lvl) {
+		const instructions = {
+			1: "Jellies can only fall and do not jump",
+			9: "Fixed jellies can't move",
+			11: "Black blocks can also be moved"
+		};
+		const instruction = instructions[Levels.current + 1];
+		if(instruction){
+			const instDiv = document.getElementById('instruction');
+			instDiv.innerHTML = `<span>${instruction}</span>`;
+			instDiv.style.display = 'table';
+			setTimeout(() => {
+				instDiv.style.display = 'none';
+				const moreOpt = document.getElementById('moreoptionsinfo')
+				if(Levels.current === 0){
+					moreOpt.style.display = 'initial';
+					setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
+				}
+			}, 2000)
+		}
+	}
 }).call(this);
 
 function showMenu(e) {
@@ -939,12 +962,18 @@ function showMenu(e) {
 		submenu.style.display = 'none';
 	}
 	function show() {
-		var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+		const skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
 		if(skippedLevels.length){
 			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.remove('disabled')});
 		}
 		else{
 			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.add('disabled')});
+		}
+		if(typeof Levels.getById(Levels.current)[3] === 'object') {
+			document.querySelector('ul.menu .solutions').classList.remove('disabled');
+		}
+		else {
+			document.querySelector('ul.menu .solutions').classList.add('disabled');
 		}
 
 		menu.style.display = 'block';
