@@ -17,7 +17,7 @@ class Levels {
 				end: 6
 			}
 		], //level 1? https://www.youtube.com/watch?v=aFmlJqtPwg4
-		/*1*/[
+		/*1*/[[
 			"xxxxxxxxxxxxxx",
 			"x            x",
 			"x            x",
@@ -26,8 +26,12 @@ class Levels {
 			"x  g     r b x",
 			"xxbxxxg xxxxxx",
 			"xxxxxxxxxxxxxx"
-		], //level 2? https://youtu.be/aFmlJqtPwg4?t=8
-		/*03*/[
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 10,
+			end: 18
+		}], //level 2? https://youtu.be/aFmlJqtPwg4?t=8
+		/*03*/[[
 			"xxxxxxxxxxxxxx",
 			"x            x",
 			"x            x",
@@ -37,8 +41,12 @@ class Levels {
 			"x        rrb x",
 			"xxxx x x xxxxx",
 			"xxxxxxxxxxxxxx"
-		], //level 3? https://youtu.be/aFmlJqtPwg4?t=19
-		/*04*/[
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 20,
+			end: 29
+		}], //level 3? https://youtu.be/aFmlJqtPwg4?t=19
+		/*04*/[[
 			"xxxxxxxxxxxxxx",
 			"x            x",
 			"x            x",
@@ -50,17 +58,25 @@ class Levels {
 			"x          xyx",
 			"xxr xxxxxxxxxx",
 			"xxxxxxxxxxxxxx"
-		], //level 4 https://youtu.be/aFmlJqtPwg4?t=30
-		/*2*/[
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 31,
+			end: 40
+		}], //level 4 https://youtu.be/aFmlJqtPwg4?t=30
+		/*2*/[[
 			"xxxxxxxxxxxxxx",
 			"x            x",
 			"x            x",
 			"x            x",
-			"x     g   g  x",
+			"x     y   y  x",
 			"x   r r   r  x",
 			"xxxxx x x xxxx",
 			"xxxxxxxxxxxxxx"
-		], //level 5? https://youtu.be/aFmlJqtPwg4?t=41
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 42,
+			end: 48
+		}], //level 5? https://youtu.be/aFmlJqtPwg4?t=41
 		/*5*/[
 			"xxxxxxxxxxxxxx",
 			"x            x",
@@ -2152,8 +2168,27 @@ class Levels {
 			]
 		],
 	];
+	static passed;
 	static current;
 	static getAll = () => { return Levels.levels; };
 	static getById = (id) => { return Levels.levels[id]; };
+	static getPassedLevels = () => {
+
+		if(!Levels.passed) {
+			let passedLevels = JSON.parse(localStorage.getItem('passedLevels') || "{}") ;
+			if(passedLevels === {} ) {
+				for (let i = 0; i < Levels.levels.length; i++) {
+					passedLevels[i] = false;
+				}
+				localStorage.setItem('passedLevels', JSON.stringify(passedLevels));
+			}
+			Levels.passed = passedLevels;
+		}
+		return Levels.passed;
+	};
+	static updatePassedLevels = (level) => {
+		Levels.passed[level] = true;
+		localStorage.setItem('passedLevels', JSON.stringify(Levels.passed));
+	}
 }
 

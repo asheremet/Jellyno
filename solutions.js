@@ -9,9 +9,8 @@ document.querySelector('#solutions .confirmation button.ok').addEventListener('c
 document.querySelector("ul.menu li.solutions").addEventListener('click', (evt) => {
 	const el = evt.target;
 	if (!el.classList.contains('disabled')) {
-		const skipReminder = localStorage.getItem('skip_reminder');
+		const skipReminder = localStorage.getItem('skipReminder');
 		document.getElementById('dontshow').style.display = skipReminder === undefined || skipReminder === null ? 'none' : 'initial';
-		console.log(skipReminder, typeof skipReminder)
 		document.getElementById("solutions").style.display = 'block';
 		if (skipReminder === 'true') {
 			playSolution();
@@ -22,9 +21,8 @@ document.querySelector("ul.menu li.solutions").addEventListener('click', (evt) =
 });
 function rememberSelection(falseOnly) {
 	const dontShow = document.querySelector('#dontshow input');
-	console.log(dontShow && dontShow.checked)
-	if(localStorage.getItem('skip_reminder') !== 'true')
-		localStorage.setItem('skip_reminder', falseOnly ? false : dontShow && dontShow.checked);
+	if(localStorage.getItem('skipReminder') !== 'true')
+		localStorage.setItem('skipReminder', falseOnly ? false : dontShow && dontShow.checked);
 	if (dontShow)
 		dontShow.checked = false;
 }
