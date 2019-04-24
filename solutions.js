@@ -45,7 +45,7 @@ function playSolution() {
 			width: '670',
 			videoId: solution.id,
 			playerVars: {
-				start: solution.start-1,
+				start: parseInt(solution.start),
 				end: solution.end,
 				controls: 0,
 				disablekb: 1,
@@ -53,14 +53,14 @@ function playSolution() {
 				fs: 0
 			},
 			events: {
-				onReady: onPlayerReady,
+				onReady: onPlayerReady.bind(null, ((parseFloat(solution.start)-parseInt(solution.start))*1000)),
 			},
 		});
 	}
-	function onPlayerReady(event) {
+	function onPlayerReady(delay, event) {
 		const player = event.target;
 		player.playVideo();
-		setTimeout(() => {player.pauseVideo()}, 1000)
+		setTimeout(() => {player.pauseVideo()}, delay+1000)
 	}
 
 }
