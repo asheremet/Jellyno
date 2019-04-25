@@ -1606,6 +1606,91 @@ function getLevels() {
 				}
 			]
 		], //level 70 https://youtu.be/zf5ciAmfoTk?t=230
+		/*64*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xxxxxx      xx',
+				'xxyr00     yxx',
+				'xxxx00     xxx',
+				'xx1122     bxx',
+				'xx1122     rxx',
+				'xxbxxx     xxx',
+				'xxxxxx     xxx',
+				'xxxxxxxxxxxxxx'
+			], [
+				{
+					x: 2,
+					y: 2,
+					dir: 'up'
+				},
+				{
+					x: 2,
+					y: 6,
+					dir: 'down',
+				},
+				{
+					x: 11,
+					y: 5,
+					dir: 'down'
+				}
+			]
+		], // level 16 https://www.youtube.com/watch?v=ohBFW4yo0Ag
+		/*65*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xr           x',
+				'xx     0gg   x',
+				'xr     g 1   x',
+				'xx     2 g   x',
+				'xx     x x   x',
+				'xx           x',
+				'xx           x',
+				'xx   x xxxxxxx',
+				'xxxxxxxxxxxxxx'
+			],
+			[
+				{
+					x: 1,
+					y: 3,
+					dir: 'up',
+				},
+				{
+					x: 7,
+					y: 3,
+					dir: 'down'
+				},
+				{
+					x: 9,
+					y: 4,
+					dir: 'up'
+				}
+			]
+		],//level 19 https://youtu.be/ohBFW4yo0Ag?t=83
+		/*66*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xx         xxx',
+				'xxxxx   xxxxxx',
+				'xxxxx   xxxxxx',
+				'xxx       xxxx',
+				'xx b      yxxx',
+				'xx bgg  rryxxx',
+				'xxrry   bggxxx',
+				'xxx y   b xxxx',
+				'xxxxxxxxxxxxxx'
+			],[
+				{
+					x: 2,
+					y: 7,
+					dir: 'down'
+				},
+				{
+					x: 10,
+					y: 7,
+					dir: "down"
+				}
+			]
+		], //level 22 https://youtu.be/ohBFW4yo0Ag?t=133
 	];
 }
 
