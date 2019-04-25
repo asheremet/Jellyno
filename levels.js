@@ -298,105 +298,35 @@ class Levels {
 				start: 223.3
 			}
 		], //level 15 https://youtu.be/aFmlJqtPwg4?t=223
-		/*8*/[
+		/*new*/[
 			[
-				"xxxxxxxxxxxxxx",
-				"xxxx x  x xxxx",
-				"xxx  g  b  xxx",
-				"xx   x  x   xx",
-				"xx   b  g   xx",
-				"xxg        bxx",
-				"xxxg      bxxx",
-				"xxxx      xxxx",
-				"xxxxxxxxxxxxxx"
+				'xxxxxxxxxxxxxx',
+				'xxxxxx      xx',
+				'xxyr00     yxx',
+				'xxxx00     xxx',
+				'xx1122     bxx',
+				'xx1122     rxx',
+				'xxbxxx     xxx',
+				'xxxxxx     xxx',
+				'xxxxxxxxxxxxxx'
 			], [
 				{
-					x: 5,
-					y: 4,
+					x: 2,
+					y: 2,
 					dir: 'up'
-				}, {
-					x: 8,
-					y: 4,
-					dir: 'up'
-				}
-			]
-		],
-		/*9*/[
-			[
-				"xxxxxxxxxxxxxx",
-				"x            x",
-				"x            x",
-				"x          rbx",
-				"x    x     xxx",
-				"xb        00xx",
-				"xx  rx  x xxxx",
-				"xxxxxxxxxxxxxx"
-			], [
+				},
 				{
-					x: 4,
+					x: 2,
 					y: 6,
-					dir: 'down'
-				}
-			]
-		],
-		/*11*/[
-			[
-				"xxxxxxxxxxxxxx",
-				"x      g00g gx",
-				"x       xxx xx",
-				"x           gx",
-				"x11         xx",
-				"xxx          x",
-				"x       g    x",
-				"x   x xxx   gx",
-				"x   xxxxxx xxx",
-				"xxxxxxxxxxxxxx"
-			], [
+					dir: 'down',
+				},
 				{
-					x: 12,
-					y: 7,
-					dir: 'down'
-				}, {
-					x: 7,
-					y: 1,
-					dir: 'right'
-				}, {
-					x: 10,
-					y: 1,
-					dir: 'left'
-				}
-			]
-		],
-		/*12*/[
-			[
-				"xxxxxxxxxxxxxx",
-				"xxr rr  rr rxx",
-				"xxx  x  x  xxx",
-				"x            x",
-				"xb          bx",
-				"xx          xx",
-				"x            x",
-				"x            x",
-				"x   xxxxxx   x",
-				"xxxxxxxxxxxxxx"
-			], [
-				{
-					x: 12,
-					y: 4,
+					x: 11,
+					y: 5,
 					dir: 'down'
 				}
 			]
-		],
-		/*13*/[
-			"xxxxxxxxxxxxxx",
-			"xxxxxxxxxxxxxx",
-			"xxxxx gr xxxxx",
-			"xxxxx rb xxxxx",
-			"xxxxx gr xxxxx",
-			"xxxxx bg xxxxx",
-			"xxxxxxxxxxxxxx",
-			"xxxxxxxxxxxxxx"
-		],
+		], // level 16 https://www.youtube.com/watch?v=ohBFW4yo0Ag
 		/*14*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -420,7 +350,144 @@ class Levels {
 					dir: 'down'
 				}
 			]
-		],
+		], //level 17 https://youtu.be/ohBFW4yo0Ag?t=39
+		/*8*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xxxx x  x xxxx",
+				"xxx  g  r  xxx",
+				"xx   x  x   xx",
+				"xx   r  g   xx",
+				"xxg        rxx",
+				"xxxg      rxxx",
+				"xxxx      xxxx",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 5,
+					y: 4,
+					dir: 'up'
+				}, {
+					x: 8,
+					y: 4,
+					dir: 'up'
+				}
+			]
+		], // level 18 https://youtu.be/ohBFW4yo0Ag?t=98
+		/*new*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xr           x',
+				'xx     0gg   x',
+				'xr     g 1   x',
+				'xx     2 g   x',
+				'xx     x x   x',
+				'xx           x',
+				'xx           x',
+				'xx   x xxxxxxx',
+				'xxxxxxxxxxxxxx'
+			],
+			[
+				{
+					x: 1,
+					y: 3,
+					dir: 'up',
+				},
+				{
+					x: 7,
+					y: 3,
+					dir: 'down'
+				},
+				{
+					x: 9,
+					y: 4,
+					dir: 'up'
+				}
+			]
+		],//level 19 https://youtu.be/ohBFW4yo0Ag?t=83
+		/*11*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"x      y00y yx",
+				"x       xxx xx",
+				"x           yx",
+				"x11         xx",
+				"xxx          x",
+				"x       y    x",
+				"x   x xxx   yx",
+				"x   xxxxxx xxx",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 12,
+					y: 7,
+					dir: 'down'
+				}, {
+					x: 7,
+					y: 1,
+					dir: 'right'
+				}, {
+					x: 10,
+					y: 1,
+					dir: 'left'
+				}
+			]
+		], //level 20 https://youtu.be/ohBFW4yo0Ag?t=63
+		/*13*/[
+			"xxxxxxxxxxxxxx",
+			"xxxxxxxxxxxxxx",
+			"xxxxx yr xxxxx",
+			"xxxxx rb xxxxx",
+			"xxxxx yr xxxxx",
+			"xxxxx by xxxxx",
+			"xxxxxxxxxxxxxx",
+			"xxxxxxxxxxxxxx"
+		],//level 21 https://youtu.be/ohBFW4yo0Ag?t=124
+		/*new*/[
+			[
+				'xxxxxxxxxxxxxx',
+				'xx         xxx',
+				'xxxxx   xxxxxx',
+				'xxxxx   xxxxxx',
+				'xxx       xxxx',
+				'xx b      yxxx',
+				'xx bgg  rryxxx',
+				'xxrry   bggxxx',
+				'xxx y   b xxxx',
+				'xxxxxxxxxxxxxx'
+			],[
+				{
+					x: 2,
+					y: 7,
+					dir: 'down'
+				},
+				{
+					x: 10,
+					y: 7,
+					dir: "down"
+				}
+			]
+		], //level 22 https://youtu.be/ohBFW4yo0Ag?t=133
+		/*12*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xxr rr  rr rxx",
+				"xxx  x  x  xxx",
+				"x            x",
+				"xb          bx",
+				"xx          xx",
+				"x            x",
+				"x            x",
+				"x   xxxxxx   x",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 12,
+					y: 4,
+					dir: 'down'
+				}
+			]
+		],//level 23 https://youtu.be/ohBFW4yo0Ag?t=164
 		/*15*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -432,6 +499,7 @@ class Levels {
 				"xxxxxx   xxxxx",
 				"xxxxxx   xxxxx",
 				"xxxxxxgggxxxxx",
+				"xxxxxx   xxxxx",
 				"xxxxxxxxxxxxxx"
 			], [
 				{
@@ -448,7 +516,7 @@ class Levels {
 					dir: 'right'
 				}
 			]
-		],
+		], //level 24 https://youtu.be/ohBFW4yo0Ag?t=183
 		/*16*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -468,7 +536,7 @@ class Levels {
 					dir: 'up'
 				}
 			]
-		],
+		],//level 25 https://youtu.be/ohBFW4yo0Ag?t=210
 		/*17*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -492,18 +560,18 @@ class Levels {
 					dir: 'up'
 				}
 			]
-		],
+		],//level 26 https://youtu.be/ohBFW4yo0Ag?t=226
 		/*18*/[
 			[
 				"xxxxxxxxxxxxxx",
 				"x            x",
 				"xb01         x",
-				"xb0gg     g  x",
-				"xb023     g4bx",
-				"xxxxx g   xxxx",
-				"xxxxx gg  xxxx",
-				"xxxxx ggg xxxx",
-				"xxxxx ggggxxxx",
+				"xb0yy     y  x",
+				"xb023     y4bx",
+				"xxxxx y   xxxx",
+				"xxxxx yy  xxxx",
+				"xxxxx yyy xxxx",
+				"xxxxx yyyyxxxx",
 				"xxxxxxxxxxxxxx"
 			], [
 				{
@@ -512,7 +580,7 @@ class Levels {
 					dir: 'down'
 				}
 			]
-		],
+		],// level 27 https://youtu.be/ohBFW4yo0Ag?t=252
 		/*19*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -556,7 +624,7 @@ class Levels {
 					dir: 'left'
 				}
 			]
-		],
+		],//level 28 https://youtu.be/ohBFW4yo0Ag?t=285
 		/*20*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -576,7 +644,7 @@ class Levels {
 					dir: 'up'
 				}
 			]
-		],
+		],//level 29 https://youtu.be/ohBFW4yo0Ag?t=318
 		/*21*/[
 			[
 				"xxxxxxxxxxxxxx",
@@ -603,7 +671,7 @@ class Levels {
 					color: 'red'
 				}
 			]
-		],
+		],//level 30 https://youtu.be/ohBFW4yo0Ag?t=340
 		/*22*/[
 			[
 				"xxxxxxxxxxxxxx",

@@ -940,7 +940,8 @@
 		const instructions = {
 			1: "Jellies can only fall and do not jump",
 			9: "Fixed jellies can't move",
-			11: "Black blocks can also be moved"
+			11: "Black blocks can also be moved",
+			30: "Part of the floor is colored red.\n A new jelly will emerge if a jelly of the same color touches it"
 		};
 		const instruction = instructions[Levels.current + 1];
 		if(instruction){
