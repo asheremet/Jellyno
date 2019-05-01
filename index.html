@@ -323,7 +323,7 @@
     .yellow .mouth::before {
       content: "/";
     }
-    #solutions {
+    #confirmation {
       position: absolute;
       z-index: 3;
       height: 100%;
@@ -332,17 +332,19 @@
       display: none;
 
     }
-    #solutions .close{
+    #confirmation .close, #instructions .close{
       font-size: 25px;
       float: right;
       cursor: pointer;
+      width: 34px;
+      text-align: center;
     }
     #player{
       position: relative;
       top: 10px;
       left: -8px;
     }
-    #solutions .confirmation {
+    #confirmation .solutions {
       display: none;
       width: 650px;
       text-align: center;
@@ -350,12 +352,12 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    #solutions button {
+    #confirmation button {
       font-size: 15px;
       width: initial;
       margin: 25px 25px;
     }
-    #solutions #dontshow{
+    #confirmation #dontshow{
       margin: 50px 5px 10px;
     }
     .game{
@@ -370,7 +372,7 @@
       #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
       position: relative;
     }
-    #instruction {
+    #instructions {
       display: none;
       width: 90%;
       margin: 25px;
@@ -384,7 +386,7 @@
       color: #fff;
       font-size: 25px;
     }
-    #instruction span{
+    #instructions .text{
       display: table-cell;
       vertical-align: middle;
     }
@@ -416,9 +418,9 @@
   great extra details.</p>
 
 <div class="game">
-  <div id="solutions">
+  <div id="confirmation">
     <div class="close">✕</div>
-    <div class="confirmation">
+    <div class="solutions">
       <p>Once it's seen you can't unsee it and the solution will be so obvious that you will regret you watched. Are you sure you don't want to think just a little longer?</p>
       <span id="dontshow">
         <input type="checkbox">Don't ask again</span>
@@ -443,7 +445,10 @@
   </ul>
   <div id='stage'>
     <div id='map'></div>
-    <div id='instruction'></div>
+    <div id='instructions'>
+      <span class="text"></span>
+      <span class="close">✕</span>
+    </div>
   </div>
   <button id='next'>Next</button>
   <button id='undo'>Undo</button>

@@ -924,6 +924,14 @@
 			localStorage.removeItem('passedLevels');
 		}
 	});
+		document.querySelector("#instructions .close").addEventListener('click', function (evt) {
+			document.querySelector('#instructions').style.display = 'none';
+			if(Levels.current === 0){
+				const moreOpt = document.getElementById('moreoptionsinfo');
+				moreOpt.style.display = 'initial';
+				setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
+			}
+		});
 
 	function reset() {
 		document.getElementById('completed').style.display = 'none';
@@ -945,17 +953,9 @@
 		};
 		const instruction = instructions[Levels.current + 1];
 		if(instruction){
-			const instDiv = document.getElementById('instruction');
-			instDiv.innerHTML = `<span>${instruction}</span>`;
-			instDiv.style.display = 'table';
-			setTimeout(() => {
-				instDiv.style.display = 'none';
-				const moreOpt = document.getElementById('moreoptionsinfo')
-				if(Levels.current === 0){
-					moreOpt.style.display = 'initial';
-					setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
-				}
-			}, 2000)
+			const instDiv = document.querySelector('#instructions .text');
+			instDiv.innerHTML = instruction;
+			instDiv.parentElement.style.display = 'table';
 		}
 	}
 }).call(this);

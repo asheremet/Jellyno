@@ -1,7 +1,7 @@
-document.querySelector("#solutions .close").addEventListener('click', closeSolutions);
-document.querySelector('#solutions .confirmation button.cancel').addEventListener('click', closeSolutions);
-document.querySelector('#solutions .confirmation button.ok').addEventListener('click', () => {
-	document.querySelector('#solutions .confirmation').style.display = 'none';
+document.querySelector("#confirmation .close").addEventListener('click', closeSolutions);
+document.querySelector('#confirmation .solutions button.cancel').addEventListener('click', closeSolutions);
+document.querySelector('#confirmation .solutions button.ok').addEventListener('click', () => {
+	document.querySelector('#confirmation .solutions').style.display = 'none';
 	rememberSelection();
 	playSolution();
 });
@@ -11,11 +11,11 @@ document.querySelector("ul.menu li.solutions").addEventListener('click', (evt) =
 	if (!el.classList.contains('disabled')) {
 		const skipReminder = localStorage.getItem('skipReminder');
 		document.getElementById('dontshow').style.display = skipReminder === undefined || skipReminder === null ? 'none' : 'initial';
-		document.getElementById("solutions").style.display = 'block';
+		document.getElementById("confirmation").style.display = 'block';
 		if (skipReminder === 'true') {
 			playSolution();
 		} else {
-			document.querySelector('#solutions .confirmation').style.display = 'block';
+			document.querySelector('#confirmation .solutions').style.display = 'block';
 		}
 	}
 });
@@ -33,7 +33,7 @@ function closeSolutions() {
 		player.remove();
 	const playerDiv = document.createElement("div");
 	playerDiv.setAttribute('id', 'player');
-	const solutions = document.getElementById("solutions");
+	const solutions = document.getElementById("confirmation");
 	solutions.appendChild(playerDiv);
 	solutions.style.display = 'none';
 }
