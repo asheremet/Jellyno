@@ -837,7 +837,9 @@
 		const isPassed = Levels.getPassedLevels()[val-1];
 		const li = document.createElement('li');
 		li.setAttribute('id', `level${val}`);
-		li.innerHTML = `Level ${val}${isPassed ? ' &checkmark;' : ''}`;
+		li.innerHTML = `Level ${val}`;
+		if(isPassed)
+			li.classList.add('passed');
 		li.addEventListener('click', () => {
 			setCurrentLevel(val-1);
 			reset();
@@ -924,7 +926,7 @@
 			localStorage.removeItem('passedLevels');
 		}
 	});
-		document.querySelector("#instructions .close").addEventListener('click', function (evt) {
+	document.querySelector("#instructions .close").addEventListener('click', function (evt) {
 			document.querySelector('#instructions').style.display = 'none';
 			if(Levels.current === 0){
 				const moreOpt = document.getElementById('moreoptionsinfo');

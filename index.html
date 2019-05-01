@@ -67,10 +67,18 @@
     }
     ul ul#levels{
       max-height: 305px;
-      width: 110px;
+      width: 120px;
       position: absolute;
-      right: 160px;
+      right: 150px;
       overflow-y: auto;
+    }
+    #levels li:before{
+      content: ' ';
+      padding-right: 15px;
+    }
+    #levels li.passed:before{
+      content: '\2713';
+      padding-right: 3px;
     }
     button {height: 45px; width: 58px;}
     #reset {
@@ -344,7 +352,7 @@
       top: 10px;
       left: -8px;
     }
-    #confirmation .solutions {
+    #confirmation .solutions, #confirmation .syncGame {
       display: none;
       width: 650px;
       text-align: center;
@@ -403,6 +411,31 @@
       top: 11px;
       padding: 1px 5px 1px 20px;
     }
+    #confirmation .syncGame input {
+      font-size: 15px;
+      height: 30px;
+    }
+    #confirmation .syncGame input.passed{
+      width: 30px;
+      text-align: center;
+    }
+    #confirmation .syncGame .row {
+      padding: 30px;
+    }
+    #confirmation .syncGame .row span {
+      padding: 20px;
+    }
+    #confirmation .syncGame .row span span {
+      display: block;
+      position: relative;
+      right: 30px;
+      text-align: right;
+      padding: 0;
+      font-size: 12px;
+    }
+    #confirmation .syncGame button{
+      width: 90px;
+    }
 
   </style>
 </head>
@@ -429,17 +462,29 @@
       <button class="cancel">I'll take another shot</button>
     </div>
     <div id="player"></div>
+    <div class="syncGame">
+      <div>If you play on multiple devices<br/>you can synchronize them by changing your progress here</div>
+      <div class="row">
+        <span>Last passed level: <input class="passed"/></span>
+        <span>Skipped levels: <input class="skipped">
+          <span>(if more than one, separate with commas)</span>
+        </span>
+      </div>
+      <button class="ok">OK</button>
+      <button class="cancel">Cancel</button>
+    </div>
   </div>
   <span id="currentLevel">Level <span></span></span>
   <span id="completed">Congratulations! Level completed.</span>
   <span id="moreoptionsinfo">More options &minus;&gt;</span>
   <img class="menu" src="menu.png" onclick="showMenu(event)"/>
   <ul class="menu">
-    <li class="skip">Skip current level</li>
+    <li class="skip">Save for later</li>
     <li class="solutions">Show solution</li>
     <li id="allLevels">All levels</li>
-    <li id="skippedLevels">Skipped levels</li>
-    <li class="clearskipped">Clear skipped levels</li>
+    <li id="skippedLevels">Saved levels</li>
+    <li class="clearskipped">Clear saved levels</li>
+    <li class="changeprogress">Change progress</li>
     <li class="resetgame">Reset game</li>
     <ul id="levels"></ul>
   </ul>
@@ -466,6 +511,7 @@
   <script src='levels.js?v2'></script>
   <script src='jelly.js?v1'></script>
   <script src='solutions.js?v1'></script>
+  <script src='progress.js?v1'></script>
   <script src='https://www.youtube.com/iframe_api'></script>
 
 </body>

@@ -7,6 +7,7 @@ document.querySelector('#confirmation .solutions button.ok').addEventListener('c
 });
 
 document.querySelector("ul.menu li.solutions").addEventListener('click', (evt) => {
+	document.querySelector("#confirmation .close").classList.add('close-solutions');
 	const el = evt.target;
 	if (!el.classList.contains('disabled')) {
 		const skipReminder = localStorage.getItem('skipReminder');
@@ -27,15 +28,19 @@ function rememberSelection(falseOnly) {
 		dontShow.checked = false;
 }
 function closeSolutions() {
-	rememberSelection(true);
-	const player = document.querySelector("iframe");
-	if(player)
-		player.remove();
-	const playerDiv = document.createElement("div");
-	playerDiv.setAttribute('id', 'player');
-	const solutions = document.getElementById("confirmation");
-	solutions.appendChild(playerDiv);
-	solutions.style.display = 'none';
+	const closeBtn = document.querySelector("#confirmation .close");
+	if (closeBtn.classList.contains('close-solutions')) {
+		rememberSelection(true);
+		const player = document.querySelector("iframe");
+		if (player)
+			player.remove();
+		const playerDiv = document.createElement("div");
+		playerDiv.setAttribute('id', 'player');
+		const solutions = document.getElementById("confirmation");
+		solutions.appendChild(playerDiv);
+		solutions.style.display = 'none';
+		closeBtn.classList.remove('close-solutions');
+	}
 }
 function playSolution() {
 	const solution = Levels.getById(Levels.current)[3];
