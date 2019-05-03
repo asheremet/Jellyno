@@ -352,7 +352,7 @@
       top: 10px;
       left: -8px;
     }
-    #confirmation .solutions, #confirmation .syncGame {
+    #confirmation .message {
       display: none;
       width: 650px;
       text-align: center;
@@ -360,10 +360,13 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    #confirmation button {
+    #confirmation button{
+      width: 90px;
       font-size: 15px;
-      width: initial;
       margin: 25px 25px;
+    }
+    #confirmation .solutions button {
+      width: initial;
     }
     #confirmation #dontshow{
       margin: 50px 5px 10px;
@@ -402,13 +405,13 @@
       display: none;
       margin: 25px;
       height: 25px;
-      position: relative;
+      position: absolute;
       border: double 10px #fff;
       background: #000;
       color: #fff;
       font-size: 15px;
       left: 445px;
-      top: 11px;
+      top: -20px;
       padding: 1px 5px 1px 20px;
     }
     #confirmation .syncGame input {
@@ -433,9 +436,6 @@
       padding: 0;
       font-size: 12px;
     }
-    #confirmation .syncGame button{
-      width: 90px;
-    }
 
   </style>
 </head>
@@ -453,7 +453,7 @@
 <div class="game">
   <div id="confirmation">
     <div class="close">✕</div>
-    <div class="solutions">
+    <div class="message solutions">
       <p>Once it's seen you can't unsee it and the solution will be so obvious that you will regret you watched. Are you sure you don't want to think just a little longer?</p>
       <span id="dontshow">
         <input type="checkbox">Don't ask again</span>
@@ -462,7 +462,7 @@
       <button class="cancel">I'll take another shot</button>
     </div>
     <div id="player"></div>
-    <div class="syncGame">
+    <div class="message syncGame">
       <div>If you play on multiple devices<br/>you can synchronize them by changing your progress here</div>
       <div class="row">
         <span>Last passed level: <input class="passed"/></span>
@@ -473,17 +473,19 @@
       <button class="ok">OK</button>
       <button class="cancel">Cancel</button>
     </div>
+    <div class="message resetGame">
+      <div>Are you sure you want to reset all passed and saved levels</div>
+      <button class="ok">OK</button>
+      <button class="cancel">Cancel</button>
+    </div>
   </div>
   <span id="currentLevel">Level <span></span></span>
   <span id="completed">Congratulations! Level completed.</span>
   <span id="moreoptionsinfo">More options &minus;&gt;</span>
   <img class="menu" src="menu.png" onclick="showMenu(event)"/>
   <ul class="menu">
-    <li class="skip">Save for later</li>
-    <li class="solutions">Show solution</li>
     <li id="allLevels">All levels</li>
-    <li id="skippedLevels">Saved levels</li>
-    <li class="clearskipped">Clear saved levels</li>
+    <li class="solutions">Show solution</li>
     <li class="changeprogress">Change progress</li>
     <li class="resetgame">Reset game</li>
     <ul id="levels"></ul>
@@ -511,7 +513,7 @@
   <script src='levels.js?v2'></script>
   <script src='jelly.js?v1'></script>
   <script src='solutions.js?v1'></script>
-  <script src='progress.js?v1'></script>
+  <script src='confirmations.js?v1'></script>
   <script src='https://www.youtube.com/iframe_api'></script>
 
 </body>

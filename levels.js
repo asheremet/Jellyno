@@ -26,7 +26,7 @@ class Levels {
 			"xxxxxxxxxxxxxx"
 		],[],[],{
 			id: 'aFmlJqtPwg4',
-			start: 8.2,
+			start: 8.25,
 			end: 18
 		}], //level 2 https://youtu.be/aFmlJqtPwg4?t=8
 		/*03*/[[
@@ -1700,7 +1700,39 @@ class Levels {
 					color: 'blue'
 				},
 			]
-		], //level ? https://youtu.be/EM0XSLXwZlA?t=278 (not passed! level 53)
+		], //level 55 https://youtu.be/EM0XSLXwZlA?t=278
+		/*mine*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xxxxxxxxxxxyxx",
+				"xrryy       xx",
+				"xrryy      gxx",
+				"xbb0      xxxx",
+				"xbb0      xxxx",
+				"xggxx     xxxx",
+				"xggxx     xxxx",
+				"xxxxxxrxxxxxxx",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 11,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 7,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 8,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				},
+			]
+		], //level 55.1
 		/*47*/[
 			[
 				"xxxxxxxxxxxxxx",

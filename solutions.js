@@ -39,6 +39,7 @@ function closeSolutions() {
 		const solutions = document.getElementById("confirmation");
 		solutions.appendChild(playerDiv);
 		solutions.style.display = 'none';
+		document.querySelector('#confirmation .solutions').style.display = 'none';
 		closeBtn.classList.remove('close-solutions');
 	}
 }

@@ -54,6 +54,8 @@
 				level = levelOrMap;
 				var map = levels[levelOrMap];
 				localStorage.setItem('lastlevel', levelOrMap);
+				if(Levels.passed[level])
+					document.getElementById('next').style.display = 'initial'
 			}
 			else
 				map = levelOrMap;
@@ -429,14 +431,6 @@
 				message.style.display = 'initial';
 				document.getElementById('next').style.display = 'initial';
 				Levels.updatePassedLevels(level);
-				// const passedLevels = JSON.parse(localStorage.getItem('passedLevels')) || [];
-
-				// var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
-				// var skippedIndex = skippedLevels.indexOf(level)
-				// if(skippedIndex > -1){
-				// 	skippedLevels.splice(skippedIndex, 1);
-				// 	localStorage.setItem('skippedLevels', JSON.stringify(skippedLevels.sort()));
-				// }
 			}
 		};
 
@@ -912,20 +906,6 @@
 		next();
 	});
 
-	document.querySelector("li.clearskipped").addEventListener('click', function (evt) {
-		if (!this.classList.contains('disabled') && confirm('Are you sure you want to forget skipped levels?')) {
-			localStorage.removeItem('skippedLevels');
-		}
-	});
-
-	document.querySelector("li.resetgame").addEventListener('click', function (evt) {
-		if (confirm('Are you sure you want to reset all passed and skipped levels?')) {
-			localStorage.removeItem('lastlevel');
-			localStorage.removeItem('skipReminder');
-			localStorage.removeItem('skippedLevels');
-			localStorage.removeItem('passedLevels');
-		}
-	});
 	document.querySelector("#instructions .close").addEventListener('click', function (evt) {
 			document.querySelector('#instructions').style.display = 'none';
 			if(Levels.current === 0){
