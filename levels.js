@@ -1691,6 +1691,86 @@ function getLevels() {
 				}
 			]
 		], //level 22 https://youtu.be/ohBFW4yo0Ag?t=133
+
+		/*67*/[[
+			"xxxxxxxxxxxxxx",
+			"x            x",
+			"x            x",
+			"x            x",
+			"x        r   x",
+			"xbb    gxx   x",
+			"xx   b r     x",
+			"xx x xxxxxgxxx",
+			"xxxxxxxxxxxxxx"
+		],[],[], {
+			id: "aFmlJqtPwg4",
+			start: 0,
+			end: 6
+		}], //level 1 https://www.youtube.com/watch?v=aFmlJqtPwg4
+		/*68*/[[
+			"xxxxxxxxxxxxxx",
+			"x            x",
+			"x            x",
+			"x            x",
+			"x br r       x",
+			"x xx xx      x",
+			"x        rrb x",
+			"xxxx x x xxxxx",
+			"xxxxxxxxxxxxxx"
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 19.5,
+			end: 29
+		}], //level 3 https://youtu.be/aFmlJqtPwg4?t=19
+		/*69*/[[
+			"xxxxxxxxxxxxxx",
+			"x            x",
+			"x            x",
+			"x            x",
+			"x    b       x",
+			"x    x       x",
+			"x  r    y    x",
+			"x  x    x   yx",
+			"x          xyx",
+			"xxr xxxxxxxxxx",
+			"xxxxxxxxxxxxxx"
+		],[],[],{
+			id: 'aFmlJqtPwg4',
+			start: 30,
+			end: 40
+		}], //level 4 https://youtu.be/aFmlJqtPwg4?t=30
+		/*70*/[
+			[
+				"xxxxxxxxxxxxxx",
+				"xxxxxxxxxxxyxx",
+				"xrryy       xx",
+				"xrryy      gxx",
+				"xbb0      xxxx",
+				"xbb0      xxxx",
+				"xggxx     xxxx",
+				"xggxx     xxxx",
+				"xxxxxxrxxxxxxx",
+				"xxxxxxxxxxxxxx"
+			], [
+				{
+					x: 11,
+					y: 1,
+					dir: 'up'
+				},
+				{
+					x: 8,
+					y: 7,
+					dir: 'down'
+				}
+			], [
+				{
+					x: 8,
+					y: 8,
+					dir: 'up',
+					color: 'blue'
+				},
+			]
+		], //level 55.1
 	];
 }
 
