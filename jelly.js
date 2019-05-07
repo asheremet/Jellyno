@@ -8,7 +8,8 @@
 			return -1;
 		};
 
-	levels = getLevels();
+	levels = Levels.getAll();
+	Levels.getPassedLevels();
 
 	CELL_SIZE = 48;
 
@@ -53,6 +54,8 @@
 				level = levelOrMap;
 				var map = levels[levelOrMap];
 				localStorage.setItem('lastlevel', levelOrMap);
+				if(Levels.passed[level])
+					document.getElementById('next').style.display = 'initial'
 			}
 			else
 				map = levelOrMap;
@@ -427,12 +430,7 @@
 				message.style.right = `${right}px`;
 				message.style.display = 'initial';
 				document.getElementById('next').style.display = 'initial';
-				var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
-				var skippedIndex = skippedLevels.indexOf(level)
-				if(skippedIndex > -1){
-					skippedLevels.splice(skippedIndex, 1);
-					localStorage.setItem('skippedLevels', JSON.stringify(skippedLevels.sort()));
-				}
+				Levels.updatePassedLevels(level);
 			}
 		};
 
@@ -830,9 +828,12 @@
 	window.stage = stage;
 
 	function addLevelLI(val) {
+		const isPassed = Levels.getPassedLevels()[val-1];
 		const li = document.createElement('li');
-		li.setAttribute('data', val);
+		li.setAttribute('id', `level${val}`);
 		li.innerHTML = `Level ${val}`;
+		if(isPassed)
+			li.classList.add('passed');
 		li.addEventListener('click', () => {
 			setCurrentLevel(val-1);
 			reset();
@@ -843,7 +844,9 @@
 
 	function setCurrentLevel(lvl) {
 		level = lvl;
+		Levels.current = level;
 		currentLevel.innerHTML = level + 1;
+		showInstructions();
 	}
 
 	document.getElementById('reset').addEventListener('click', function () {
@@ -903,11 +906,14 @@
 		next();
 	});
 
-	document.querySelector("li.clearskipped").addEventListener('click', function (evt) {
-		if (!this.classList.contains('disabled') && confirm('Are you sure you want to forget skipped levels?')) {
-			localStorage.removeItem('skippedLevels');
-		}
-	});
+	document.querySelector("#instructions .close").addEventListener('click', function (evt) {
+			document.querySelector('#instructions').style.display = 'none';
+			if(Levels.current === 0){
+				const moreOpt = document.getElementById('moreoptionsinfo');
+				moreOpt.style.display = 'initial';
+				setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
+			}
+		});
 
 	function reset() {
 		document.getElementById('completed').style.display = 'none';
@@ -919,6 +925,20 @@
 	function next() {
 		setCurrentLevel(levels.length == (level + 1) ? 0 : level + 1)
 		return reset();
+	}
+	function showInstructions(lvl) {
+		const instructions = {
+			1: "Jellies can only fall and do not jump",
+			9: "Fixed jellies can't move",
+			11: "Black blocks can also be moved",
+			30: "Part of the floor is colored red.\n A new jelly will emerge if a jelly of the same color touches it"
+		};
+		const instruction = instructions[Levels.current + 1];
+		if(instruction){
+			const instDiv = document.querySelector('#instructions .text');
+			instDiv.innerHTML = instruction;
+			instDiv.parentElement.style.display = 'table';
+		}
 	}
 }).call(this);
 
@@ -939,12 +959,18 @@ function showMenu(e) {
 		submenu.style.display = 'none';
 	}
 	function show() {
-		var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
+		const skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
 		if(skippedLevels.length){
 			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.remove('disabled')});
 		}
 		else{
 			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.add('disabled')});
+		}
+		if(typeof Levels.getById(Levels.current)[3] === 'object') {
+			document.querySelector('ul.menu .solutions').classList.remove('disabled');
+		}
+		else {
+			document.querySelector('ul.menu .solutions').classList.add('disabled');
 		}
 
 		menu.style.display = 'block';

@@ -17,7 +17,8 @@
       position: relative;
       user-select: none;
       display: inline-block;
-      border: solid 1px #777;
+      top: 50%;
+      transform: translateY(-50%);
     }
     .disabled { color: #a9a9a9;}
     #currentLevel{
@@ -35,6 +36,7 @@
       border-radius: 5px;
       border: #828080 1px solid;
       padding: 1px 3px;
+      z-index: 2;
     }
     ul {
       position: absolute;
@@ -45,6 +47,7 @@
       border-radius: 5px;
       padding-inline-start: 0;
       display: none;
+      z-index: 1;
     }
     ul li {
       list-style-type: none;
@@ -64,10 +67,18 @@
     }
     ul ul#levels{
       max-height: 305px;
-      width: 110px;
+      width: 120px;
       position: absolute;
-      right: 160px;
+      right: 150px;
       overflow-y: auto;
+    }
+    #levels li:before{
+      content: ' ';
+      padding-right: 15px;
+    }
+    #levels li.passed:before{
+      content: '\2713';
+      padding-right: 3px;
     }
     button {height: 45px; width: 58px;}
     #reset {
@@ -91,12 +102,6 @@
     }
     #stage table {
       border-spacing: 0;
-      background: #ccc;
-      background-size: 36px 36px;
-      background-image: -webkit-linear-gradient(-45deg,
-      #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
-      background-image: linear-gradient(-45deg,
-      #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
     }
     #stage table td {
       padding: 0;
@@ -326,6 +331,112 @@
     .yellow .mouth::before {
       content: "/";
     }
+    #confirmation {
+      position: absolute;
+      z-index: 3;
+      height: 100%;
+      background-color: #ddd;
+      padding: 0px 5px 0 20px;
+      display: none;
+
+    }
+    #confirmation .close, #instructions .close{
+      font-size: 25px;
+      float: right;
+      cursor: pointer;
+      width: 34px;
+      text-align: center;
+    }
+    #player{
+      position: relative;
+      top: 10px;
+      left: -8px;
+    }
+    #confirmation .message {
+      display: none;
+      width: 650px;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #confirmation button{
+      width: 90px;
+      font-size: 15px;
+      margin: 25px 25px;
+    }
+    #confirmation .solutions button {
+      width: initial;
+    }
+    #confirmation #dontshow{
+      margin: 50px 5px 10px;
+    }
+    .game{
+      width: 100%;
+      height: 545px;
+      border-spacing: 0;
+      background: #ccc;
+      background-size: 36px 36px;
+      background-image: -webkit-linear-gradient(-45deg,
+      #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+      background-image: linear-gradient(-45deg,
+      #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+      position: relative;
+    }
+    #instructions {
+      display: none;
+      width: 90%;
+      margin: 25px;
+      height: 100px;
+      position: absolute;
+      top: 30%;
+      transform: translateY(-50%);
+      text-align: center;
+      border: double 10px #fff;
+      background: #000;
+      color: #fff;
+      font-size: 25px;
+    }
+    #instructions .text{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    #moreoptionsinfo{
+      display: none;
+      margin: 25px;
+      height: 25px;
+      position: absolute;
+      border: double 10px #fff;
+      background: #000;
+      color: #fff;
+      font-size: 15px;
+      left: 445px;
+      top: -20px;
+      padding: 1px 5px 1px 20px;
+    }
+    #confirmation .syncGame input {
+      font-size: 15px;
+      height: 30px;
+    }
+    #confirmation .syncGame input.passed{
+      width: 30px;
+      text-align: center;
+    }
+    #confirmation .syncGame .row {
+      padding: 30px;
+    }
+    #confirmation .syncGame .row span {
+      padding: 20px;
+    }
+    #confirmation .syncGame .row span span {
+      display: block;
+      position: relative;
+      right: 30px;
+      text-align: right;
+      padding: 0;
+      font-size: 12px;
+    }
+
   </style>
 </head>
 <body>
@@ -339,18 +450,53 @@
   can run the Windows version I highly recommend it as it has a lot of
   great extra details.</p>
 
-<div id='stage'>
-  <div id='map'></div>
+<div class="game">
+  <div id="confirmation">
+    <div class="close">✕</div>
+    <div class="message solutions">
+      <p>Once it's seen you can't unsee it and the solution will be so obvious that you will regret you watched. Are you sure you don't want to think just a little longer?</p>
+      <span id="dontshow">
+        <input type="checkbox">Don't ask again</span>
+      <br/>
+      <button class="ok">Yeah, I'm sure</button>
+      <button class="cancel">I'll take another shot</button>
+    </div>
+    <div id="player"></div>
+    <div class="message syncGame">
+      <div>If you play on multiple devices<br/>you can synchronize them by changing your progress here</div>
+      <div class="row">
+        <span>Last passed level: <input class="passed"/></span>
+        <span>Skipped levels: <input class="skipped">
+          <span>(if more than one, separate with commas)</span>
+        </span>
+      </div>
+      <button class="ok">OK</button>
+      <button class="cancel">Cancel</button>
+    </div>
+    <div class="message resetGame">
+      <div>Are you sure you want to reset all passed and saved levels</div>
+      <button class="ok">OK</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </div>
   <span id="currentLevel">Level <span></span></span>
   <span id="completed">Congratulations! Level completed.</span>
+  <span id="moreoptionsinfo">More options &minus;&gt;</span>
   <img class="menu" src="menu.png" onclick="showMenu(event)"/>
   <ul class="menu">
-    <li class="skip">Skip current level</li>
-    <li class="clearskipped">Clear skipped levels</li>
     <li id="allLevels">All levels</li>
-    <li id="skippedLevels">Skipped levels</li>
+    <li class="solutions">Show solution</li>
+    <li class="changeprogress">Change progress</li>
+    <li class="resetgame">Reset game</li>
     <ul id="levels"></ul>
   </ul>
+  <div id='stage'>
+    <div id='map'></div>
+    <div id='instructions'>
+      <span class="text"></span>
+      <span class="close">✕</span>
+    </div>
+  </div>
   <button id='next'>Next</button>
   <button id='undo'>Undo</button>
   <button id='reset'>Reset</button>
@@ -364,8 +510,11 @@
 
 <p><a href='https://github.com/asheremet/Jellyno'>Here's the source</a>.
 
-  <script src='levels.js?v63'></script>
+  <script src='levels.js?v2'></script>
   <script src='jelly.js?v1'></script>
+  <script src='solutions.js?v1'></script>
+  <script src='confirmations.js?v1'></script>
+  <script src='https://www.youtube.com/iframe_api'></script>
 
 </body>
 </html>
