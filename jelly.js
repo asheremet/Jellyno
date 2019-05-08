@@ -1,3 +1,8 @@
+if(location.search.substr(1) === 'reset'){
+	console.log(resetGame);
+	resetGame();
+	location.href = './index.html'
+}
 (function() {
 	var CELL_SIZE, Jelly, JellyCell, Stage, Wall, directions, i, level, levels, moveToCell, option, stage,
 		style_colors, _i, _ref,
@@ -951,4 +956,10 @@ function showMenu(e) {
 		menu.style.display = 'block';
 
 	}
+}
+function resetGame() {
+	localStorage.removeItem('lastlevel');
+	localStorage.removeItem('skipReminder');
+	localStorage.removeItem('passedLevels');
+	location.reload();
 }

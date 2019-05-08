@@ -30,9 +30,4 @@ document.querySelector("li.resetgame").addEventListener('click', function (evt) 
 	showConfirmation();
 	document.querySelector('#confirmation .resetGame').style.display = 'block';
 });
-document.querySelector('#confirmation .resetGame button.ok').addEventListener('click', () => {
-	localStorage.removeItem('lastlevel');
-	localStorage.removeItem('skipReminder');
-	localStorage.removeItem('passedLevels');
-	location.reload();
-});
+document.querySelector('#confirmation .resetGame button.ok').addEventListener('click', resetGame);
