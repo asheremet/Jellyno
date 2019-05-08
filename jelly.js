@@ -880,31 +880,6 @@
 		levelsMenu.style.top = '56px';
 		levelsMenu.style.display = 'block';
 	});
-	document.getElementById('skippedLevels').addEventListener('click', function (ev) {
-		if (!this.classList.contains('disabled')) {
-			ev.stopPropagation();
-			const levelsMenu = document.getElementById('levels');
-			levelsMenu.innerHTML = '';
-			var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
-			for (let i = 0; i < skippedLevels.length; i++)
-				addLevelLI(skippedLevels[i]+1);
-			document.querySelector('ul.menu').style.display = 'block';
-			levelsMenu.style.top = '84px';
-			levelsMenu.style.display = 'block';
-		}
-	});
-	document.querySelector("li.skip").addEventListener('click', function (evt) {
-		var skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
-		if (!skippedLevels.find((l) => level == l))
-		skippedLevels.push(level);
-
-		localStorage.setItem('skippedLevels', JSON.stringify(skippedLevels.sort((a, b) => {
-			if (a > b) return 1;
-			if (b > a) return -1;
-			return 0;
-		})));
-		next();
-	});
 
 	document.querySelector("#instructions .close").addEventListener('click', function (evt) {
 			document.querySelector('#instructions').style.display = 'none';

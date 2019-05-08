@@ -36,10 +36,3 @@ document.querySelector('#confirmation .resetGame button.ok').addEventListener('c
 	localStorage.removeItem('passedLevels');
 	location.reload();
 });
-
-document.querySelector("li.clearskipped").addEventListener('click', function (evt) {
-	if (!this.classList.contains('disabled')) {
-		showConfirmation();
-		document.querySelector('#confirmation .clearSaved').style.display = 'block';
-	}
-});
