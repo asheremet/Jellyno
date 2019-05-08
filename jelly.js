@@ -1,5 +1,4 @@
 if(location.search.substr(1) === 'reset'){
-	console.log(resetGame);
 	resetGame();
 	location.href = './index.html'
 }
@@ -939,13 +938,6 @@ function showMenu(e) {
 		submenu.style.display = 'none';
 	}
 	function show() {
-		const skippedLevels = JSON.parse(localStorage.getItem('skippedLevels')) || [];
-		if(skippedLevels.length){
-			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.remove('disabled')});
-		}
-		else{
-			document.querySelectorAll("li.clearskipped, #skippedLevels").forEach((el) => {el.classList.add('disabled')});
-		}
 		if(typeof Levels.getById(Levels.current)[3] === 'object') {
 			document.querySelector('ul.menu .solutions').classList.remove('disabled');
 		}
