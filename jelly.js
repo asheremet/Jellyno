@@ -885,15 +885,6 @@ if(location.search.substr(1) === 'reset'){
 		levelsMenu.style.display = 'block';
 	});
 
-	document.querySelector("#instructions .close").addEventListener('click', function (evt) {
-			document.querySelector('#instructions').style.display = 'none';
-			if(Levels.current === 0){
-				const moreOpt = document.getElementById('moreoptionsinfo');
-				moreOpt.style.display = 'initial';
-				setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
-			}
-		});
-
 	function reset() {
 		document.getElementById('completed').style.display = 'none';
 		document.getElementById('next').style.display = 'none';
@@ -902,10 +893,10 @@ if(location.search.substr(1) === 'reset'){
 	}
 
 	function next() {
-		setCurrentLevel(levels.length == (level + 1) ? 0 : level + 1)
+		setCurrentLevel(levels.length === (level + 1) ? 0 : level + 1)
 		return reset();
 	}
-	function showInstructions(lvl) {
+	function showInstructions() {
 		const instructions = {
 			1: "Jellies can only fall and do not jump",
 			9: "Fixed jellies can't move",
@@ -913,13 +904,25 @@ if(location.search.substr(1) === 'reset'){
 			30: "Part of the floor is colored red.\n A new jelly will emerge if a jelly of the same color touches it"
 		};
 		const instruction = instructions[Levels.current + 1];
-		if(instruction){
+		if(instruction) {
 			const instDiv = document.querySelector('#instructions .text');
-			instDiv.innerHTML = instruction;
 			instDiv.parentElement.style.display = 'table';
+			instDiv.innerHTML = instruction;
+			setTimeout(() => document.addEventListener('click', hideInstructions), 100);
 		}
 	}
 }).call(this);
+
+function hideInstructions(e) {
+	const instructions = document.querySelector('#instructions');
+	document.removeEventListener('click', hideInstructions);
+	if(Levels.current === 0 && instructions.style.display !== 'none'){
+		const moreOpt = document.getElementById('moreoptionsinfo');
+		moreOpt.style.display = 'initial';
+		setTimeout(() => {moreOpt.style.display = 'none'}, 2000)
+	}
+	instructions.style.display = 'none';
+}
 
 function showMenu(e) {
 	var menu = document.querySelector('ul.menu');
@@ -931,13 +934,15 @@ function showMenu(e) {
 	}
 	else {
 		show();
-		document.addEventListener('click', hide, {once: true})
+		document.addEventListener('click', hide);
 	}
 	function hide() {
 		menu.style.display = 'none';
 		submenu.style.display = 'none';
+		document.removeEventListener('click', hide);
 	}
 	function show() {
+		hideInstructions();
 		if(typeof Levels.getById(Levels.current)[3] === 'object') {
 			document.querySelector('ul.menu .solutions').classList.remove('disabled');
 		}
