@@ -725,7 +725,7 @@ if(location.search.substr(1) === 'reset'){
 				'up': ['borderTop', 'borderBottom'],
 				'down': ['borderBottom', 'borderTop']
 			};
-			this.dom.style[borders[dir][0]] = this.color.indexOf('black')==0?'none':'dotted 1px #c3c3c3';
+			this.dom.style[borders[dir][0]] = 'none';//this.color.indexOf('black')==0?'none':'dotted 1px #c3c3c3';
 			other.dom.style[borders[dir][1]] = 'none';
 			if (other instanceof Wall) {
 				this.jelly.immovable = true;

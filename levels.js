@@ -756,7 +756,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 0,
+			end: 12
+		}
 	], //level 31 https://www.youtube.com/watch?v=_LNnRyJwMxo&t=3s
 	/*32*/[
 		[
@@ -777,7 +781,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 12.8,
+			end: 31
+		}
 	], //level 32 https://youtu.be/_LNnRyJwMxo?t=13
 	/*33*/[
 		[
@@ -820,8 +828,54 @@ Levels.levels = [
 				color: 'red'
 			}
 		]
-	], //level 33 https://youtu.be/_LNnRyJwMxo?t=32
+	], //level 33.1 https://youtu.be/_LNnRyJwMxo?t=32
 	/*34*/[
+		[
+			"xxxxxxxxxxxxxx",
+			"x0y    y1  g x",
+			"x x    x   x x",
+			"xy2    3y    x",
+			"x x    x     x",
+			"xg           x",
+			"xxxx         x",
+			"xxx         xx",
+			"xxxx  x  xxxxx",
+			"xxxxxxxxxxxxxx"
+		], [
+			{
+				x: 2,
+				y: 1,
+				dir: 'left'
+			},
+			{
+				x: 7,
+				y: 1,
+				dir: 'right'
+			},
+			{
+				x: 1,
+				y: 3,
+				dir: 'right'
+			},
+			{
+				x: 8,
+				y: 3,
+				dir: 'left'
+			}
+		], [
+			{
+				x: 13,
+				y: 4,
+				dir: 'left',
+				color: 'green'
+			}
+		], {
+			id: '_LNnRyJwMxo',
+			start: 32.5,
+			end: 59
+		}
+	], //level 33 https://youtu.be/_LNnRyJwMxo?t=32
+	/*35*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xx      0 xxxx',
@@ -853,9 +907,13 @@ Levels.levels = [
 				dir: 'left',
 				color: 'red'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 60.7,
+			end: 88
+		}
 	], //level 34 https://youtu.be/_LNnRyJwMxo?t=60
-	/*35*/[
+	/*36*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxxxx  x  x",
@@ -890,9 +948,13 @@ Levels.levels = [
 				dir: 'up',
 				color: 'green'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 89.5,
+			end: 106,
+		}
 	], //level 35 https://youtu.be/_LNnRyJwMxo?t=89
-	/*36*/[
+	/*37*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xx        xxxx",
@@ -926,9 +988,13 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 107.7,
+			end: 131
+		}
 	], //level 36 https://youtu.be/_LNnRyJwMxo?t=107
-	/*37*/[
+	/*38*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxgxyxrxxxx",
@@ -970,9 +1036,13 @@ Levels.levels = [
 				dir: 'up',
 				color: 'blue'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 132.75,
+			end: 166
+		}
 	], //level 37 https://youtu.be/_LNnRyJwMxo?t=132
-	/*38*/[
+	/*39*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxx x  x xxxx",
@@ -1014,9 +1084,13 @@ Levels.levels = [
 				dir: 'up',
 				color: 'green'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 167.5,
+			end: 189
+		}
 	], //level 38 https://youtu.be/_LNnRyJwMxo?t=167
-	/*39*/[
+	/*40*/[[
 		"xxxxxxxxxxxxxx",
 		"xxxx yyrr xxxx",
 		"xxxx yyrr xxxx",
@@ -1027,8 +1101,13 @@ Levels.levels = [
 		"xxxx rryy xxxx",
 		"xxxx rryy xxxx",
 		"xxxxxxxxxxxxxx"
+	], [], [], {
+			id: '_LNnRyJwMxo',
+			start: 190.5,
+			end: 212
+		}
 	], //level 39 https://youtu.be/_LNnRyJwMxo?t=190
-	/*40*/[
+	/*41*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xr    xxxxxxxx",
@@ -1110,7 +1189,7 @@ Levels.levels = [
 			}
 		]
 	], //level 40 https://youtu.be/_LNnRyJwMxo?t=213
-	/*41*/[
+	/*42*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxb xxxxxx bxx",
@@ -1164,7 +1243,7 @@ Levels.levels = [
 			}
 		]
 	], //level 41 https://youtu.be/_LNnRyJwMxo?t=228
-	/*42*/[
+	/*43*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xg   y   xr0bx",
@@ -1212,7 +1291,7 @@ Levels.levels = [
 			}
 		]
 	], //level 42 https://youtu.be/_LNnRyJwMxo?t=249
-	/*43*/[
+	/*44*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xx1144    xxxx",
@@ -1239,7 +1318,7 @@ Levels.levels = [
 			}
 		]
 	], //level 43 https://youtu.be/_LNnRyJwMxo?t=274
-	/*44*/[
+	/*45*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xb      r12rxx",
@@ -1308,7 +1387,7 @@ Levels.levels = [
 			}
 		]
 	], //level 44 https://youtu.be/_LNnRyJwMxo?t=292
-	/*45*/[
+	/*46*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"x00    bbbbbrx",
@@ -1352,7 +1431,7 @@ Levels.levels = [
 			}
 		]
 	], //level 45(mirrored) https://youtu.be/_LNnRyJwMxo?t=330
-	/*46*/[
+	/*47*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"x    brgrbg  x",
@@ -1373,7 +1452,7 @@ Levels.levels = [
 			}
 		]
 	], //level 46 https://www.youtube.com/watch?v=EM0XSLXwZlA
-	/*47*/[
+	/*48*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xrr  rrr  rryx",
@@ -1405,7 +1484,7 @@ Levels.levels = [
 			}
 		]
 	], //level 47 https://youtu.be/EM0XSLXwZlA?t=20
-	/*48*/[
+	/*49*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xgggxxybr    x",
@@ -1452,7 +1531,7 @@ Levels.levels = [
 			}
 		]
 	], //level 48 https://youtu.be/EM0XSLXwZlA?t=58
-	/*49*/[
+	/*50*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxx    xxxxx",
@@ -1478,7 +1557,7 @@ Levels.levels = [
 			}
 		]
 	], //level 49 https://youtu.be/EM0XSLXwZlA?t=90
-	/*50*/[
+	/*51*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"x      r r r x",
@@ -1505,7 +1584,7 @@ Levels.levels = [
 			}
 		]
 	], //level 50 https://youtu.be/EM0XSLXwZlA?t=123
-	/*51*/[
+	/*52*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xx000x   b g x",
@@ -1554,7 +1633,7 @@ Levels.levels = [
 				dir: 'up'
 			}
 		]], //level 51 https://youtu.be/EM0XSLXwZlA?t=187
-	/*52*/[
+	/*53*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxxxg g gxx",
@@ -1614,7 +1693,7 @@ Levels.levels = [
 			}
 		]
 	], //level 52 https://youtu.be/EM0XSLXwZlA?t=209
-	/*53*/[
+	/*54*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxxxg g gxx",
@@ -1673,7 +1752,7 @@ Levels.levels = [
 			}
 		]
 	], //level 53 https://youtu.be/EM0XSLXwZlA?t=227
-	/*54*/[
+	/*55*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxyy      ggxx",
@@ -1728,7 +1807,7 @@ Levels.levels = [
 			}
 		]
 	],
-	/*55*/[
+	/*56*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxxxxxxxyxx",
@@ -1759,8 +1838,8 @@ Levels.levels = [
 				color: 'blue'
 			},
 		]
-	], //level 55 https://youtu.be/EM0XSLXwZlA?t=278
-	/*56*/[
+	], //level 56 https://youtu.be/EM0XSLXwZlA?t=278
+	/*57*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxxxxxxxyxx",
@@ -1791,8 +1870,8 @@ Levels.levels = [
 				color: 'blue'
 			},
 		]
-	], //level 55.1
-	/*57*/[
+	], //level 56.1
+	/*58*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxx   y   0xxx",
@@ -1837,7 +1916,7 @@ Levels.levels = [
 			}
 		]
 	],
-	/*58*/[
+	/*59*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xxxxxg    ggxx",
@@ -1869,7 +1948,7 @@ Levels.levels = [
 			}
 		]
 	],
-	/*59*/[
+	/*60*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xg           x",
@@ -1907,7 +1986,7 @@ Levels.levels = [
 			}
 		]
 	], //level 58 https://youtu.be/EM0XSLXwZlA?t=...
-	/*60*/[
+	/*61*/[
 		"xxxxxxxxxxxxxx",
 		"x            x",
 		"x       r    x",
@@ -1919,7 +1998,7 @@ Levels.levels = [
 		"xxxxx xxxxxxxx",
 		"xxxxxxxxxxxxxx"
 	], //level 59 https://youtu.be/EM0XSLXwZlA?t=373
-	/*61*/[
+	/*62*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"x   gr       x",
@@ -1943,7 +2022,7 @@ Levels.levels = [
 			}
 		]
 	], //level 60 https://youtu.be/EM0XSLXwZlA?t=396
-	/*62*/[
+	/*63*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xxx rgb    xxx',
@@ -1987,7 +2066,7 @@ Levels.levels = [
 			}
 		]
 	], //level 61 https://www.youtube.com/watch?v=zf5ciAmfoTk
-	/*63*/[
+	/*64*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xy      00rxxx',
@@ -2057,7 +2136,7 @@ Levels.levels = [
 			}
 		]
 	], //level 62 https://youtu.be/zf5ciAmfoTk?t=28
-	/*64*/[
+	/*65*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xrr  rb   xxxx',
@@ -2084,7 +2163,7 @@ Levels.levels = [
 			}
 		]
 	], //level 63 https://youtu.be/zf5ciAmfoTk?t=59 (not passed! level 61)
-	/*65*/[
+	/*66*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xrr  rb   xxxx',
@@ -2111,7 +2190,7 @@ Levels.levels = [
 			}
 		]
 	], //level 64 https://youtu.be/zf5ciAmfoTk?t=87
-	/*66*/[
+	/*67*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'x0yyyyy  br xx',
@@ -2168,7 +2247,7 @@ Levels.levels = [
 			}
 		]
 	], //level 65 https://youtu.be/zf5ciAmfoTk?t=114
-	/*67*/[
+	/*68*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xxxxxx       x',
@@ -2226,7 +2305,7 @@ Levels.levels = [
 			}
 		]
 	], //level 66 https://youtu.be/zf5ciAmfoTk?t=139
-	/*68*/[
+	/*69*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xxxxbx  xgxxxx',
@@ -2260,7 +2339,7 @@ Levels.levels = [
 			}
 		]
 	], // https://youtu.be/zf5ciAmfoTk?t=168
-	/*69*/[
+	/*70*/[
 		[
 			"xxxxxxxxxxxxxx",
 			"xg   b     xxx",
@@ -2300,7 +2379,7 @@ Levels.levels = [
 			}
 		]
 	], // https://youtu.be/zf5ciAmfoTk?t=188
-	/*70*/[
+	/*71*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xyyy0000000xxx',
@@ -2320,7 +2399,7 @@ Levels.levels = [
 			}
 		]
 	], //level 69 https://youtu.be/zf5ciAmfoTk?t=211
-	/*71*/[
+	/*72*/[
 		[
 			'xxxxxxxxxxxxxx',
 			'xggg0000000xxx',
