@@ -2128,12 +2128,6 @@ Levels.levels = [
 				dir: 'left'
 			}
 		], [
-			/*{
-				x: 5,
-				y: 5,
-				color: 'yellow',
-				dir: 'right'
-			},*/
 			{
 				x: 8,
 				y: 9,
@@ -2146,7 +2140,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'blue'
 			}
-		]
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 0,
+			end: 27
+		}
 	], //level 61 https://www.youtube.com/watch?v=zf5ciAmfoTk
 	/*64*/[
 		[
@@ -2216,7 +2214,11 @@ Levels.levels = [
 				y: 5,
 				dir: 'up'
 			}
-		]
+		], [], {
+			id: 'zf5ciAmfoTk',
+			start: 28,
+			end: 58
+		}
 	], //level 62 https://youtu.be/zf5ciAmfoTk?t=28
 	/*65*/[
 		[
@@ -2243,8 +2245,12 @@ Levels.levels = [
 				color: 'blue',
 				dir: 'up'
 			}
-		]
-	], //level 63 https://youtu.be/zf5ciAmfoTk?t=59 (not passed! level 61)
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 59,
+			end: 86
+		}
+	], //level 63 https://youtu.be/zf5ciAmfoTk?t=59
 	/*66*/[
 		[
 			'xxxxxxxxxxxxxx',
@@ -2270,7 +2276,11 @@ Levels.levels = [
 				color: 'blue',
 				dir: 'up'
 			}
-		]
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 87.5,
+			end: 113
+		}
 	], //level 64 https://youtu.be/zf5ciAmfoTk?t=87
 	/*67*/[
 		[
@@ -2327,7 +2337,11 @@ Levels.levels = [
 				dir: 'left',
 				color: 'yellow'
 			}
-		]
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 114,
+			end: 138
+		}
 	], //level 65 https://youtu.be/zf5ciAmfoTk?t=114
 	/*68*/[
 		[
@@ -2385,7 +2399,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 139.5,
+			end: 167
+		}
 	], //level 66 https://youtu.be/zf5ciAmfoTk?t=139
 	/*69*/[
 		[
@@ -2419,7 +2437,11 @@ Levels.levels = [
 				y: 6,
 				dir: 'down'
 			}
-		]
+		], [], {
+			id: 'zf5ciAmfoTk',
+			start: 168,
+			end: 187
+		}
 	], // https://youtu.be/zf5ciAmfoTk?t=168
 	/*70*/[
 		[
@@ -2459,7 +2481,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'zf5ciAmfoTk',
+			start: 188.55,
+			end: 210
+		}
 	], // https://youtu.be/zf5ciAmfoTk?t=188
 	/*71*/[
 		[
@@ -2479,7 +2505,11 @@ Levels.levels = [
 				y: 6,
 				dir: 'up'
 			}
-		]
+		], [], {
+			id: 'zf5ciAmfoTk',
+			start: 211.9,
+			end: 229
+		}
 	], //level 69 https://youtu.be/zf5ciAmfoTk?t=211
 	/*72*/[
 		[
@@ -2499,7 +2529,10 @@ Levels.levels = [
 				y: 6,
 				dir: 'up'
 			}
-		]
+		], [], {
+			id: 'zf5ciAmfoTk',
+			start: 230.8
+		}
 	], //level 70 https://youtu.be/zf5ciAmfoTk?t=230
 ];
 Levels.passed;
