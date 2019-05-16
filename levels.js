@@ -1187,7 +1187,11 @@ Levels.levels = [
 				dir: 'left',
 				color: 'blue'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 213,
+			end: 227
+		}
 	], //level 40 https://youtu.be/_LNnRyJwMxo?t=213
 	/*42*/[
 		[
@@ -1241,7 +1245,11 @@ Levels.levels = [
 				dir: 'left',
 				color: 'blue'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 228,
+			end: 248
+		}
 	], //level 41 https://youtu.be/_LNnRyJwMxo?t=228
 	/*43*/[
 		[
@@ -1289,7 +1297,11 @@ Levels.levels = [
 				y: 2,
 				dir: 'left'
 			}
-		]
+		], [], {
+			id: '_LNnRyJwMxo',
+			start: 249,
+			end: 273
+		}
 	], //level 42 https://youtu.be/_LNnRyJwMxo?t=249
 	/*44*/[
 		[
@@ -1316,7 +1328,11 @@ Levels.levels = [
 				dir: 'right',
 				color: 'red'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 274.3,
+			end: 291
+		}
 	], //level 43 https://youtu.be/_LNnRyJwMxo?t=274
 	/*45*/[
 		[
@@ -1385,52 +1401,59 @@ Levels.levels = [
 				dir: 'up',
 				color: 'green'
 			}
-		]
+		], {
+			id: '_LNnRyJwMxo',
+			start: 292.7,
+			end: 329
+		}
 	], //level 44 https://youtu.be/_LNnRyJwMxo?t=292
 	/*46*/[
 		[
 			"xxxxxxxxxxxxxx",
-			"x00    bbbbbrx",
-			"x0b        byx",
-			"x00        byx",
-			"xxxyyy     byx",
-			"xxr1b1     xxx",
-			"xx 111     xxx",
-			"xxxxx      xxx",
-			"xxxxxxxx   xxx",
+			"xrbbbbb    00x",
+			"xyb        b0x",
+			"xyb        00x",
+			"xyb     yyyxxx",
+			"xxx     1b1rxx",
+			"xxx     111 xx",
+			"xxx      xxxxx",
+			"xxx   xxxxxxxx",
 			"xxxxxxxxxxxxxx"
 		], [
 			{
-				x: 2,
+				x: 11,
 				y: 2,
-				dir: 'left'
+				dir: 'right'
 			}, {
-				x: 2,
+				x: 11,
 				y: 2,
 				dir: 'up'
 			}, {
-				x: 2,
+				x: 11,
 				y: 2,
 				dir: 'down'
 			}, {
-				x: 2,
+				x: 11,
 				y: 5,
 				dir: 'up'
 			}, {
-				x: 4,
+				x: 9,
 				y: 5,
 				dir: 'down'
 			}, {
-				x: 4,
+				x: 9,
 				y: 5,
 				dir: 'left'
 			}, {
-				x: 4,
+				x: 9,
 				y: 5,
 				dir: 'right'
 			}
-		]
-	], //level 45(mirrored) https://youtu.be/_LNnRyJwMxo?t=330
+		], [], {
+			id: '_LNnRyJwMxo',
+			start: 330.5
+		}
+	], //level 45 https://youtu.be/_LNnRyJwMxo?t=330
 	/*47*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -1450,7 +1473,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 0,
+			end: 19
+		}
 	], //level 46 https://www.youtube.com/watch?v=EM0XSLXwZlA
 	/*48*/[
 		[
@@ -1482,7 +1509,11 @@ Levels.levels = [
 				dir: 'right',
 				color: 'green'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 20.2,
+			edn: 57
+		}
 	], //level 47 https://youtu.be/EM0XSLXwZlA?t=20
 	/*49*/[
 		[
@@ -1529,7 +1560,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 58.05,
+			end: 89
+		}
 	], //level 48 https://youtu.be/EM0XSLXwZlA?t=58
 	/*50*/[
 		[
@@ -1555,7 +1590,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 90.2,
+			end: 122
+		}
 	], //level 49 https://youtu.be/EM0XSLXwZlA?t=90
 	/*51*/[
 		[
@@ -1582,7 +1621,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'yellow'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 123.2,
+			end: 186
+		}
 	], //level 50 https://youtu.be/EM0XSLXwZlA?t=123
 	/*52*/[
 		[
@@ -1632,7 +1675,11 @@ Levels.levels = [
 				y: 3,
 				dir: 'up'
 			}
-		]], //level 51 https://youtu.be/EM0XSLXwZlA?t=187
+		], [], {
+			id: 'EM0XSLXwZlA',
+			start: 187.7,
+			end: 208
+		}], //level 51 https://youtu.be/EM0XSLXwZlA?t=187
 	/*53*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -1691,7 +1738,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 209.7,
+			end: 226
+		}
 	], //level 52 https://youtu.be/EM0XSLXwZlA?t=209
 	/*54*/[
 		[
@@ -1750,7 +1801,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 226.8,
+			end: 239
+		}
 	], //level 53 https://youtu.be/EM0XSLXwZlA?t=227
 	/*55*/[
 		[
@@ -1760,9 +1815,9 @@ Levels.levels = [
 			"xxgr      ryxx",
 			"xxxx      xxxx",
 			"xxxxx    xxxxx",
-			"xx r     r  xx",
-			"xx 2     3  xx",
-			"xx 2     3  xx",
+			"xx r      r xx",
+			"xx 2      3 xx",
+			"xx 2      3 xx",
 			"xxxxxxxxxxxxxx"
 		], [
 			{
@@ -1801,12 +1856,16 @@ Levels.levels = [
 				dir: 'down'
 			},
 			{
-				x: 9,
+				x: 10,
 				y: 6,
 				dir: 'down'
 			}
-		]
-	],
+		], [], {
+			id: 'EM0XSLXwZlA',
+			start: 240.7,
+			end: 277
+		}
+	], // https://youtu.be/EM0XSLXwZlA?t=240
 	/*56*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -1837,7 +1896,11 @@ Levels.levels = [
 				dir: 'up',
 				color: 'blue'
 			},
-		]
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 278,
+			end: 302
+		}
 	], //level 56 https://youtu.be/EM0XSLXwZlA?t=278
 	/*57*/[
 		[
@@ -1874,8 +1937,8 @@ Levels.levels = [
 	/*58*/[
 		[
 			"xxxxxxxxxxxxxx",
-			"xxx   y   0xxx",
-			"xxx   x   bbxx",
+			"xxxx  y   0xxx",
+			"xxxx  x   bbxx",
 			"x         bbxx",
 			"x         xxxx",
 			"x  x      xxxx",
@@ -1914,8 +1977,12 @@ Levels.levels = [
 				dir: 'up',
 				color: 'yellow'
 			}
-		]
-	],
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 304.5,
+			end: 326
+		}
+	], //https://youtu.be/EM0XSLXwZlA?t=304
 	/*59*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -1946,8 +2013,12 @@ Levels.levels = [
 				dir: 'up',
 				color: 'red'
 			}
-		]
-	],
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 327.5,
+			end: 344
+		}
+	], // https://youtu.be/EM0XSLXwZlA?t=328
 	/*60*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -1984,9 +2055,13 @@ Levels.levels = [
 				dir: 'up',
 				color: 'blue'
 			}
-		]
-	], //level 58 https://youtu.be/EM0XSLXwZlA?t=...
-	/*61*/[
+		], {
+			id: 'EM0XSLXwZlA',
+			start: 345.75,
+			end: 372
+		}
+	], //level 58 https://youtu.be/EM0XSLXwZlA?t=345
+	/*61*/[[
 		"xxxxxxxxxxxxxx",
 		"x            x",
 		"x       r    x",
@@ -1997,7 +2072,11 @@ Levels.levels = [
 		"xxx x      xxx",
 		"xxxxx xxxxxxxx",
 		"xxxxxxxxxxxxxx"
-	], //level 59 https://youtu.be/EM0XSLXwZlA?t=373
+	], [], [], {
+		id: 'EM0XSLXwZlA',
+		start: 373.1,
+		end: 395
+	}], //level 59 https://youtu.be/EM0XSLXwZlA?t=373
 	/*62*/[
 		[
 			"xxxxxxxxxxxxxx",
@@ -2020,7 +2099,10 @@ Levels.levels = [
 				y: 6,
 				dir: 'down'
 			}
-		]
+		], [], {
+			id: 'EM0XSLXwZlA',
+			start: 396.3
+		}
 	], //level 60 https://youtu.be/EM0XSLXwZlA?t=396
 	/*63*/[
 		[
